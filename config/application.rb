@@ -10,8 +10,9 @@ module Job
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-    config.i18n.default_locale = :ja
-
+    
+    config.i18n.default_locale = :ja #英語から日本語に翻訳を
+ 
 
     # Configuration for the application, engines, and railties goes here.
     #
