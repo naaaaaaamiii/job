@@ -1,0 +1,7 @@
+ #投稿と下書きのenum翻訳
+  ja:
+   enums:
+    post:
+      post_status:
+        draft: '下書きする'
+        published: '投稿する'

@@ -191,10 +191,3 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "..."
-
- ja:
-    enums:
-      order:
-        post_status:
-          credit_card: "下書き"
-          transfer: "投稿"
