@@ -1,2 +1,7 @@
 <h1>My page</h1>自分が書いた記事の一覧
 
+   <% @posts.each do |post| %>
+    
+     <%= post.title %>
+   <% end %>
+
