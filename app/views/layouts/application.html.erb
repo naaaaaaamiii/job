@@ -16,6 +16,12 @@
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </li>
+      <li>
+        <%= link_to "mypage", new_user_session_path %>
+      </li>
+      <li>
+        <%= link_to "いいね一覧", new_user_session_path%>
+      </li>
     <% else %>
       <li>
         <%= link_to "新規登録", new_user_registration_path %>
