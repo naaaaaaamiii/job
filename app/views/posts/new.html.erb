@@ -1,2 +1,13 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>記事を新しく書くとこ</h1>
+ <div class="container">
+   <div class="row">
+     <div class="col">
+       <%= form_with model:@post, url:posts_path do |f| %>
+       <%= f.text_field :title, placeholder:"タイトル" %><br>
+       <%= f.text_area :body, placeholder:"本文" %>
+       <%= f.submit "保存する" %>
+       <% end %>
+     </div>
+   </div>
+ </div>
+
