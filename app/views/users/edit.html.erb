@@ -1,2 +1,25 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <h3 class="my-3">Profile</h3>
+  </div>
+  <div class="row">
+    <div class="col justify-content-center">
+      <%=form_with model:@post, url:new_user_path do |f|%>
+        <table class="table">
+          <tr>
+            <th>name</th>
+            <th><%= f.text_field :name, class:"form-control", placeholder:"ここに入力した名前が表示されます" %></th>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= f.text_area :introduction, class:"form-control" %></th>
+          </tr>
+          <tr>
+            <th></th>
+            <th><%=f.submit "更新する", class:"btn btn-success" %></th>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+<div>
