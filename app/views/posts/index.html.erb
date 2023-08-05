@@ -1,8 +1,18 @@
-<h1>My page</h1>自分が書いた記事の一覧
-
-   <% @posts.each do |post| %>
-     <%= image_tag post.get_post_image(100,100) %>
-     <%= post.title %>
-     <%= l post.created_at, format: :short %>
-   <% end %>
-
+<div class="container">
+ <h3 class="my-5">My Page</h3>
+  <div class="row">
+   <div class="col">
+    <table class="table">
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= image_tag post.get_post_image(100,100) %></td>
+            <td><%=link_to post.title,post_path(post) %></td>
+            <td><%= l post.created_at, format: :short %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+   </div>
+  </div>
+</div>
