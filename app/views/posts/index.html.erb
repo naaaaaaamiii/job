@@ -2,7 +2,7 @@
  <h3 class="my-5">My Page</h3>
   <div class="row">
    <% @posts.each do |post| %>
-     <div class="col-3 m-3">
+     <div class="col-3 justify-content-around">
       <div class="card shadow" style="width: 15rem;">
           <%= image_tag post.get_post_image(100,100) %>
           <%=link_to post.title, post_path(post) %><br>
