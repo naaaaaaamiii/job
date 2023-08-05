@@ -191,3 +191,8 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "..."
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M"
+      short: "%m/%d"

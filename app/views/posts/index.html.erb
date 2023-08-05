@@ -1,6 +1,8 @@
 <h1>My page</h1>自分が書いた記事の一覧
 
    <% @posts.each do |post| %>
+     <%= image_tag post.get_post_image(100,100) %>
      <%= post.title %>
+     <%= l post.created_at, format: :short %>
    <% end %>
 
