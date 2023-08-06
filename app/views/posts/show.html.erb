@@ -1,10 +1,12 @@
 <div class="container">
   <div class="row">
-    <!--My pageに戻るボタン-->
-    <div class="col-2">
-      <%= link_to posts_path,class:"btn btn-outline-secondary rounded-circle" do %>
+    <div class="col">
+      <!--My pageに戻るボタン-->
+      <%= link_to posts_path,class:"btn btn-outline-secondary rounded-circle my-4" do %>
        <i class="fa-solid fa-angles-left"></i>
-      <% end %>
+      <% end %><br>
+      <!--お気に入りボタン-->
+      <%= render'favorites/nocount', post: @post %>
     </div>
     <!--記事の詳細-->
     <div class="col">

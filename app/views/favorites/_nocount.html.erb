@@ -1,0 +1,10 @@
+ <% if post.favorited_by?(current_user) %>
+     <%= link_to post_favorites_path(post), method: :delete do %>
+        <i class="fas fa-heart btn btn-outline-secondary rounded-circle" aria-hidden="true" style="color: red;"></i>
+        <span style="color: red;">
+     <% end %>
+  <% else %>
+     <%= link_to post_favorites_path(post), method: :post do %>
+        <i class="fa-regular fa-heart btn btn-outline-secondary rounded-circle"></i>
+     <% end %>
+ <% end %>
