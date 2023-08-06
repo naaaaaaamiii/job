@@ -3,6 +3,10 @@ class Post < ApplicationRecord
   
   enum post_status: { draft:0, published:1 } #下書き,投稿のenumステータス
   
+  has_many :favorites, dependent: :destroy #いいね機能
+  def favorites_by?(user)
+    favorites.exists?(user_id: user.id)
+  end
   
   has_one_attached :post_image #投稿の画像表示
   
