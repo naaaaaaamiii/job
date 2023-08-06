@@ -1,5 +1,10 @@
 <div class="container">
   <div class="row">
+    <div class="col-2">
+      <%= link_to posts_path(current_user.id),class:"btn btn-outline-secondary rounded-circle" do %>
+       <i class="fa-solid fa-angles-left"></i>
+      <% end %>
+    </div>
     <div class="col">
       <%= @post.title %><br>
       <%= @post.body %>
