@@ -6,10 +6,10 @@
        <i class="fa-solid fa-angles-left"></i>
       <% end %><br>
       <!--非同期化-->
-      <th id="favorite-btn">
+      <p id="favorite_buttons_<%= @post.id %>">
         <!--お気に入りボタン-->
         <%= render'favorites/favorite-btn', post: @post %>
-      </th>
+      </p>
     </div>
     <!--記事の詳細-->
     <div class="col">
