@@ -5,8 +5,11 @@
       <%= link_to posts_path,class:"btn btn-outline-secondary rounded-circle my-4" do %>
        <i class="fa-solid fa-angles-left"></i>
       <% end %><br>
-      <!--お気に入りボタン-->
-      <%= render'favorites/nocount', post: @post %>
+      <!--非同期化-->
+      <id="favorite_buttons_<%= post.id %>">
+        <!--お気に入りボタン-->
+        <%= render'favorites/favorite-btn', post: @post %>
+      </id>
     </div>
     <!--記事の詳細-->
     <div class="col">
