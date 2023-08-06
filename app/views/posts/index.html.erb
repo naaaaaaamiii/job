@@ -2,7 +2,7 @@
  <h3 class="my-5">My Page</h3>
   <div class="row">
    <% @posts.each do |post| %>
-     <div class="col-3 justify-content-around">
+     <div class="col-3">
       <div class="card shadow" style="width: 15rem;">
           <%= image_tag post.get_post_image(100,100) %>
           <%=link_to post.title, post_path(post) %><br>
@@ -10,10 +10,11 @@
       </div>
      </div>
    <% end %>
+   <!--新しい記事を書くボタン-->
     <div class="col">
       <%= link_to new_post_path, class:"btn  btn-outline-secondary" do %>
-       <i class="fa-solid fa-pencil">記事を書く</i>
+       新しい記事を書く<i class="fa-solid fa-pencil"></i>
       <% end %>
-     </div>
+    </div>
   </div>
 </div>
