@@ -7,6 +7,10 @@
       <%=form_with model: @user, method: :patch do |f|%>
         <table class="table">
           <tr>
+            <th>profile image</th>
+            <th><%= f.file_field :image, accept: "image/*" %></th>
+          </tr>
+          <tr>
             <th>name</th>
             <th><%= f.text_field :name, class:"form-control", placeholder:"ここに入力した名前が表示されます" %></th>
           </tr>

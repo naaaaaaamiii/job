@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :posts
   has_one_attached :image
   
-   def get_image(width, height)
-    unless post_image.attached?
+  def get_image(width, height)
+    unless image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.png')
       image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
     end

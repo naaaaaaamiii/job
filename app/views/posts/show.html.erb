@@ -4,8 +4,9 @@
       <%= @post.title %><br>
       <%= @post.body %>
     </div>
-    <div class="col">
-      その記事書いた人のプロフィール
+    <!--Userプロフィール-->
+    <div class="col-3">
+     <%= render 'users/index', user: @user %>
     </div>
   </div>
 </div>
