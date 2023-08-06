@@ -7,6 +7,7 @@
           <%= image_tag post.get_post_image(100,100) %>
           <%=link_to post.title, post_path(post) %><br>
           <%= l post.created_at, format: :short %>
+          <%= render'favorites/favorite', post: post %>
       </div>
      </div>
    <% end %>

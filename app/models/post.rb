@@ -4,7 +4,8 @@ class Post < ApplicationRecord
   enum post_status: { draft:0, published:1 } #下書き,投稿のenumステータス
   
   has_many :favorites, dependent: :destroy #いいね機能
-  def favorites_by?(user)
+  
+  def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
   
