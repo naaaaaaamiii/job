@@ -3,11 +3,13 @@
   <div class="row">
    <% @posts.each do |post| %>
      <div class="col-3">
+      <!--投稿一覧-->
       <div class="card shadow" style="width: 15rem;">
           <%= image_tag post.get_post_image(100,100) %>
           <%=link_to post.title, post_path(post) %><br>
           <%= l post.created_at, format: :short %>
-          <%= render'favorites/favorite', post: post %>
+          <i class="fa-regular fa-heart"> <%= post.favorites.count %></i>
+          <i class="fa-regular fa-comment"> <%= post.post_comments.count %></i>
       </div>
      </div>
    <% end %>
