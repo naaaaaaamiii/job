@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root to: "homes#top"
 
   resources :posts, only: [:index, :show, :edit, :create, :update, :destroy, :new] do
-    resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
   end
   resources :users, only: [:index, :show, :edit, :update, :new]
 
