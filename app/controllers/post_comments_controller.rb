@@ -1,4 +1,5 @@
 class PostCommentsController < ApplicationController
+ 
   def create
    post = Post.find(params[:post_id])
    comment = current_user.post_comments.new(post_comment_params)
@@ -8,8 +9,8 @@ class PostCommentsController < ApplicationController
   end
   
   def destroy
-   comment = PostComment.find(params[:id])
-   comment.destroy
+   @comment = PostComment.find(params[:id])
+   @comment.destroy
   end
   
   def post_comment_params

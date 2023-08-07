@@ -17,6 +17,7 @@
         <%= @post.body %>
        <div class="row">
         <!--コメント欄-->
+        <%= render 'post_comments/index', post: @post %>
         <%= render 'post_comments/form', post: @post, post_comment: @post_comment %>
        </div>
       </div>
