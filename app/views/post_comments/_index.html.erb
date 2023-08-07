@@ -1,4 +1,5 @@
 <table>
+  <!--コメント一覧-->
   <tbody>
     <% post.post_comments.each do |post_comment| %>
     <tr>
@@ -11,6 +12,7 @@
       <td><%= post_comment.comment %></td>
       <td>
         <% if post_comment.user == current_user %>
+        　<!--コメント削除ボタン-->
           <%= link_to post_post_comment_path(post, post_comment), method: :delete, class: "btn" do %>
           <i class="fa-solid fa-trash-can"></i>
           <% end %>

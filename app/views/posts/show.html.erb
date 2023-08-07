@@ -2,7 +2,7 @@
   <div class="row">
       <div class="col">
         <!--My pageに戻るボタン-->
-        <%= link_to posts_path,class:"btn btn-outline-secondary rounded-circle my-4" do %>
+        <%= link_to user_path(current_user),class:"btn btn-outline-secondary rounded-circle my-4" do %>
          <i class="fa-solid fa-angles-left"></i>
         <% end %><br>
         <!--非同期化-->
