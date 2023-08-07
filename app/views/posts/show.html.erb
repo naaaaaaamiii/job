@@ -16,11 +16,11 @@
         <%= @post.title %><br>
         <%= @post.body %>
        <div class="row">
-            <div id="post-comments">
+            <div id="post_comments">
                 <!--コメント欄-->
                 <%= render 'post_comments/index', post: @post, post_comments: @post_comments %><!--コメント一覧-->
             </div>
-            <div id="comment-form">
+            <div id="comment_form">
                 <%= render 'post_comments/form', post: @post, post_comment: @post_comment %><!--コメント入力フォーム-->
             </div>
        </div>
