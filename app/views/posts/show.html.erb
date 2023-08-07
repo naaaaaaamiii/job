@@ -15,10 +15,14 @@
       <div class="col">
         <%= @post.title %><br>
         <%= @post.body %>
+       <div class="row">
+        <!--コメント欄-->
+        <%= render 'post_comments/form', post: @post, post_comment: @post_comment %>
+       </div>
       </div>
       <div class="col-3">
       <!--Userプロフィール-->
-      <!--%= render 'users/index', user: @user %>-->
+      <%= render 'users/index', user: @user %>
         <div class="row">
            <!--記事の編集-->
            <%= link_to edit_post_path(@post), class:"btn btn-outline-secondary" do %>
@@ -28,8 +32,4 @@
       </div>
     </div>
 </div>
- <div class="row">
-     <div class="col-my3 center">
-      <%= render 'post_comments/form', post: @post, post_comment: @post_comment %>
-      </div>
-    </div>
+ 
