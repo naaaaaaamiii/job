@@ -1,30 +1,35 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-      <!--My pageに戻るボタン-->
-      <%= link_to posts_path,class:"btn btn-outline-secondary rounded-circle my-4" do %>
-       <i class="fa-solid fa-angles-left"></i>
-      <% end %><br>
-      <!--非同期化-->
-      <p id="favorite_buttons_<%= @post.id %>">
-        <!--お気に入りボタン-->
-        <%= render'favorites/favorite-btn', post: @post %>
-      </p>
-    </div>
-    <!--記事の詳細-->
-    <div class="col">
-      <%= @post.title %><br>
-      <%= @post.body %>
-    </div>
-    <div class="col-3">
-    <!--Userプロフィール-->
-    <%= render 'users/index', user: @user %>
-      <div class="row">
-         <!--記事の編集-->
-         <%= link_to edit_post_path(@post), class:"btn btn-outline-secondary" do %>
-           記事の編集
-         <% end %>
+      <div class="col">
+        <!--My pageに戻るボタン-->
+        <%= link_to posts_path,class:"btn btn-outline-secondary rounded-circle my-4" do %>
+         <i class="fa-solid fa-angles-left"></i>
+        <% end %><br>
+        <!--非同期化-->
+        <p id="favorite_buttons_<%= @post.id %>">
+          <!--お気に入りボタン-->
+          <%= render'favorites/favorite-btn', post: @post %>
+        </p>
+      </div>
+      <!--記事の詳細-->
+      <div class="col">
+        <%= @post.title %><br>
+        <%= @post.body %>
+      </div>
+      <div class="col-3">
+      <!--Userプロフィール-->
+      <!--%= render 'users/index', user: @user %>-->
+        <div class="row">
+           <!--記事の編集-->
+           <%= link_to edit_post_path(@post), class:"btn btn-outline-secondary" do %>
+             記事の編集
+           <% end %>
+        </div>
       </div>
     </div>
-  </div>
 </div>
+ <div class="row">
+     <div class="col-my3 center">
+      <%= render 'post_comments/form', post: @post, post_comment: @post_comment %>
+      </div>
+    </div>
