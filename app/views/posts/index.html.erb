@@ -1,18 +1,18 @@
 <div class="container">
- <div class="row">
-  <div class="col">
-    <table class="table">
-     <tbody>
-      <%= @posts.each do |post| %>
-         <tr>
-          <td><%= image_tag post.get_post_image(50,50) %></td>
-          <th><%= post.title %></th>
-          <td><i class="fa-regular fa-face-kiss-wink-heart"></i><%= post.favorites.count %></td>
-          <td><i class="fa-regular fa-comment"></i><%= post.post_comments.count %></td>
-         </tr>
-      <% end %>
-     </tbody>
-    </table>
+  <div class="row">
+   <div class="col">
+     <table class="table">
+       <tbody>
+        <% @posts.each do |post| %>
+           <tr>
+            <td><%= image_tag post.get_post_image(50,50) %></td>
+            <th><%= post.title %></th>
+            <td><i class="fa-regular fa-face-kiss-wink-heart"></i><%= post.favorites.count %></td>
+            <td><i class="fa-regular fa-comment"></i><%= post.post_comments.count %></td>
+           </tr>
+        <% end %>
+      </tbody>
+     </table>
+   </div>
   </div>
- </div>
 </div>
