@@ -10,8 +10,8 @@ class PostCommentsController < ApplicationController
   end
   
   def destroy
-   @comment = PostComment.find(params[:id])
-   @comment.destroy
+   @post_comment = PostComment.find(params[:id])
+   @post_comment.destroy
    #redirect_to request.referer　非同期のためコメントアウト
   end
   
