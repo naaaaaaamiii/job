@@ -1,1 +1,2 @@
-$('#post-comments').html("<%= j(render "post_comments/form", post: @post) %>");
+$('#post-comments_<%= @post %>').html("<%= j(render "post_comments/form", post: @post) %>");
+<!--コメント削除したときの非同期-->

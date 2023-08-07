@@ -1,2 +1,3 @@
-$('#post-comments').html("<%= j(render "post_comments/index", post: @post) %>");
+$('#post-comments_<%= @post %>').html("<%= j(render "post_comments/index", post: @post post_comment: @post_comment) %>");
 $("textarea").val('');
+<!--コメント投稿したときの非同期-->
