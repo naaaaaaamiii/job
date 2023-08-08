@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   
   devise_for :users
   root to: "homes#top"
+  
+  # タグの検索で使用する
+  get "search_tag" => "post#search_tag"
 
   resources :posts, only: [:index, :show, :edit, :create, :update, :destroy, :new] do
     resources :post_comments, only: [:create, :destroy]

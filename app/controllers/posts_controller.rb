@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     tag_list = params[:post][:name].split(',')
     @post.save!
-    @post.save_tag_genres(tag_list)
+    @post.save_tags(tag_list)
     redirect_to posts_path
   end
 
@@ -24,6 +24,17 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @tag_list = @post_workout.workout_tags.pluck(:name).join(',')
+  end
+  
+  def update
+     @tag_list = params[:post][:name].split(',')
+  end
+  
+  def search_tag
+    @tag_list = PostTag.all
+    @tag = PostTag.find(params[:tag_genre_id])
+    @posts = @tag.posts
   end
   
   private

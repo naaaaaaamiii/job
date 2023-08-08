@@ -1,15 +1,16 @@
  <div class="container">
-  <h3 class="my-5">New Post</h3>
-   <div class="row">
-     <div class="col">
-       <%= form_with model:@post, url:posts_path do |f| %>
-       <%= f.text_field :title, placeholder:"タイトル" %><br>
-       <%= f.text_area :body, placeholder:"本文" %><br>
-       <%= f.file_field :post_image, accept: "image/*" %><br>
-       <%= f.select :post_status, Post.post_statuses.keys.map{ |k| [t("enums.post.post_status.#{k}"),k]}, {}, {class: "custom-select w-25"} %><br>
-       <%= f.submit "保存する", class: "btn btn-success" %>
-       <% end %>
+   <h3 class="my-5">New Post</h3>
+     <div class="row">
+       <div class="col">
+         <%= form_with model:@post, url:posts_path do |f| %>
+         <%= f.text_field :title, placeholder:"タイトル" %><br>
+         <%= f.text_area :body, placeholder:"本文" %><br>
+         <%= f.file_field :post_image, accept: "image/*" %><br>
+         <%= f.text_field :name,value: @tag_list, placeholder:"タグ(,で区切ると複数タグ登録できます)" %>
+         <%= f.select :post_status, Post.post_statuses.keys.map{ |k| [t("enums.post.post_status.#{k}"),k]}, {}, {class: "custom-select w-25"} %><br>
+         <%= f.submit "保存する", class: "btn btn-success" %>
+         <% end %>
+       </div>
      </div>
-   </div>
  </div>
 
