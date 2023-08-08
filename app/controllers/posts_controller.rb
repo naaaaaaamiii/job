@@ -15,6 +15,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    # タグ表示
+    @post = Post.find(params[:id])
+    @tag_list = @post.tag_genres.pluck(:name).join(',')
+    @post_tags = @post.tag_genres
   end
   
   def show
@@ -31,7 +35,7 @@ class PostsController < ApplicationController
      @tag_list = params[:post][:name].split(',')
   end
   
-  def search_tag #検索機能(タグ)
+  def search_tag #検索機能(タグのみ)
     @tag_list = PostTag.all
     @tag = PostTag.find(params[:tag_genre_id])
     @posts = @tag.posts
