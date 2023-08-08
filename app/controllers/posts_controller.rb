@@ -31,7 +31,7 @@ class PostsController < ApplicationController
      @tag_list = params[:post][:name].split(',')
   end
   
-  def search_tag
+  def search_tag #検索機能(タグ)
     @tag_list = PostTag.all
     @tag = PostTag.find(params[:tag_genre_id])
     @posts = @tag.posts

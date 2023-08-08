@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "homes#top"
   
   # タグの検索で使用する
-  get "search_tag" => "post#search_tag"
+  get "search_tag" => "posts#search_tag"
 
   resources :posts, only: [:index, :show, :edit, :create, :update, :destroy, :new] do
     resources :post_comments, only: [:create, :destroy]
