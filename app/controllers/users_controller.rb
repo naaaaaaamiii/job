@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @posts = Post.all
+    @user = current_user
   end
 
   def edit

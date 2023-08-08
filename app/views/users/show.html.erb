@@ -1,23 +1,41 @@
 <div class="container">
- <h3 class="my-5">My Page</h3>
-  <div class="row">
-   <% @posts.each do |post| %>
-     <div class="col-3">
-      <!--投稿一覧-->
-      <div class="card shadow" style="width: 15rem;">
-          <%= image_tag post.get_post_image(100,100) %>
-          <%=link_to post.title, post_path(post) %><br>
-          <%= l post.created_at, format: :short %>
-          <i class="fa-regular fa-heart"> <%= post.favorites.count %></i>
-          <i class="fa-regular fa-comment"> <%= post.post_comments.count %></i>
-      </div>
-     </div>
-   <% end %>
-   <!--新しい記事を書くボタン-->
-    <div class="col">
-      <%= link_to new_post_path, class:"btn  btn-outline-secondary" do %>
-       新しい記事を書く<i class="fa-solid fa-pencil"></i>
-      <% end %>
+ <!--今ログインしているユーザーのプロフィール-->
+ <div class="row">
+    <div class="col-3">
+     <%= image_tag @user.get_image(150,150) %>
     </div>
-  </div>
+    <div class="col-8">
+      <table class="table">
+        <tbody>
+         <tr>
+          <th><%= @user.name %></th>
+         </tr>
+         <tr>
+          <td><%= @user.introduction %></td>
+         </tr>
+        </tbody>
+       </table>
+    </div>
+ </div>
+ <h3 class="my-5">My Page</h3>
+   <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-3">
+         <!--投稿一覧-->
+         <div class="card shadow" style="width: 15rem;">
+             <%= image_tag post.get_post_image(100,100) %>
+             <%=link_to post.title, post_path(post) %><br>
+             <%= l post.created_at, format: :short %>
+             <i class="fa-regular fa-heart"> <%= post.favorites.count %></i>
+             <i class="fa-regular fa-comment"> <%= post.post_comments.count %></i>
+         </div>
+      </div>
+    <% end %>
+      <!--新しい記事を書くボタン-->
+       <div class="col">
+         <%= link_to new_post_path, class:"btn  btn-outline-secondary" do %>
+          新しい記事を書く<i class="fa-solid fa-pencil"></i>
+         <% end %>
+       </div>
+   </div>
 </div>
