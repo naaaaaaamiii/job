@@ -20,7 +20,7 @@
  <h3 class="my-5">My Page</h3>
    <div class="row">
     <% @posts.each do |post| %>
-      <div class="col-3">
+      <div class="col-justify-content-around m-3">
          <!--投稿一覧-->
          <div class="card shadow" style="width: 15rem;">
              <%= image_tag post.get_post_image(100,100) %>
