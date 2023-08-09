@@ -17,10 +17,15 @@
                 <td><%= f.file_field :post_image, accept: "image/*" %></td>
             </tr>
             <tr>
-                <td> <%= f.select :post_status, Post.post_statuses.keys.map{ |k| [t("enums.post.post_status.#{k}"),k]}, {}, {class: "custom-select w-25"} %><br></td>
+                <td><%= f.select :post_status, Post.post_statuses.keys.map{ |k| [t("enums.post.post_status.#{k}"),k]}, {}, {class: "custom-select w-25"} %></td>
             </tr>
             <tr>
-                <td> <%= f.submit "更新する", class: "btn btn-success" %><br>
+                <td>
+                    <%= f.submit "更新する", class: "btn btn-success" %>
+                         <%= link_to post_path(@post), method: :delete, class: "btn" do %>
+                         <i class="fa-solid fa-trash-can"></i>
+                    <% end %>
+                </td>
             </td>
             </tr>
             <% end %>
