@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   has_many :tag_genres,     through: :post_tags
 
   
-  def save_tag_genres(genres) #タグ機能
+  def save_tag_genres(tags) #タグ機能
     current_tags = self.tag_genres.pluck(:name) unless self.tag_genres.nil?
     old_tags = current_genres - tags
     new_tags = tags - current_tags

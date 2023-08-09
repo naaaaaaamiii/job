@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_08_072054) do
+ActiveRecord::Schema.define(version: 2023_08_09_020507) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -55,13 +55,19 @@ ActiveRecord::Schema.define(version: 2023_08_08_072054) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "post_tags", force: :cascade do |t|
+  create_table "post_tag_relationships", force: :cascade do |t|
     t.integer "post_id", null: false
-    t.integer "tag_genre_id", null: false
+    t.integer "post_tag_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_id"], name: "index_post_tags_on_post_id"
-    t.index ["tag_genre_id"], name: "index_post_tags_on_tag_genre_id"
+    t.index ["post_id"], name: "index_post_tag_relationships_on_post_id"
+    t.index ["post_tag_id"], name: "index_post_tag_relationships_on_post_tag_id"
+  end
+
+  create_table "post_tags", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -69,12 +75,6 @@ ActiveRecord::Schema.define(version: 2023_08_08_072054) do
     t.string "title", null: false
     t.text "body", null: false
     t.boolean "post_status", default: false, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "tag_genres", force: :cascade do |t|
-    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -95,6 +95,6 @@ ActiveRecord::Schema.define(version: 2023_08_08_072054) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "post_tags", "posts"
-  add_foreign_key "post_tags", "tag_genres"
+  add_foreign_key "post_tag_relationships", "post_tags"
+  add_foreign_key "post_tag_relationships", "posts"
 end

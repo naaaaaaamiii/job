@@ -1,0 +1,2 @@
+class PostTagRelationship < ApplicationRecord
+end
