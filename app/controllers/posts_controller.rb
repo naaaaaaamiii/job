@@ -38,7 +38,7 @@ class PostsController < ApplicationController
      @tag_list = params[:post][:name].split(',')
   end
   
-  def destroy
+  def destroy #記事の削除
      post = Post.find(params[:id])
      post.destroy
      redirect_to request.referer

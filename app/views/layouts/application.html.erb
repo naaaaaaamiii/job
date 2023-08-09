@@ -18,20 +18,20 @@
           <% if user_signed_in? %>
               <li class="nav-item mr-3">
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa-solid fa-right-from-bracket"></i>ログアウト
+                    <i class="fa-solid fa-right-from-bracket"></i>ログアウト
                 <% end %>
               </li>
               <li class="nav-item mr-3">
                 <%= link_to "Mypage", user_path(current_user) %><!--マイページ-->
               </li>
               <li class="nav-item mr-3">
-                <%= link_to new_user_session_path do %>
-                <i class="fa-solid fa-heart"></i><!--いいね一覧-->
+                <%= link_to favorites_user_path(current_user) do %>
+                    <i class="fa-solid fa-heart"></i><!--いいね一覧-->
                 <% end %>
               </li>
               <li class="nav-item mr-3">
                 <%= link_to posts_path do %>
-                <i class="fa-solid fa-magnifying-glass"></i><!--検索-->
+                    <i class="fa-solid fa-magnifying-glass"></i><!--検索-->
                 <% end %>
               </li>
               <li class="nav-item mr-3">
