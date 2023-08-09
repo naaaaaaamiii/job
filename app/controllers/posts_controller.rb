@@ -18,16 +18,15 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    # タグ表示
-    @post = Post.find(params[:id])
-    @tag_list = @post.tag_genres.pluck(:name).join(',')
-    @post_tags = @post.tag_genres
   end
   
   def show
      @post = Post.find(params[:id])
      @user = @post.user
      @post_comment = PostComment.new
+     # タグ表示
+     @tag_list = @post.post_tags.pluck(:name).join(',')
+     @post_tags = @post.post_tags
   end
 
   def edit

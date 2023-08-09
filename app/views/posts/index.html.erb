@@ -14,11 +14,6 @@
                 <th><%= post.title %></th>
                 <td><i class="fa-regular fa-face-kiss-wink-heart"></i><%= post.favorites.count %></td>
                 <td><i class="fa-regular fa-comment"></i><%= post.post_comments.count %></td>
-                <td>
-                 <% @post_tags.each do |tag| %>
-                   <i class="fa-solid fa-tag"></i>
-                 <% end %>
-                </td>
                </tr>
             <% end %>
           </tbody>

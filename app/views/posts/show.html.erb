@@ -13,8 +13,11 @@
       </div>
       <!--記事の詳細-->
       <div class="col">
-        <%= @post.title %><br>
-        <%= @post.body %>
+         <% @post_tags.each do |tag| %>
+             <i class="fa-solid fa-tag"></i>
+         <% end %>
+         <%= @post.title %><br>
+         <%= @post.body %>
        <div class="row">
              <!--コメント欄-->
             <div id="post_comments">
