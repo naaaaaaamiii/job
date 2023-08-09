@@ -11,7 +11,7 @@
            <tbody>
             <% @posts.each do |post| %>
                <tr>
-                  <th><%= link_to post.title,post_path(post) %></th>
+                  <th><%= post.title %></th>
                   <th><%= post.post_status %></th>
                   <th>
                     <%= link_to edit_post_path(post), class:"btn btn-outline-secondary rounded-circle" do %>
