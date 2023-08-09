@@ -22,9 +22,9 @@
                  <tr> <!--保存ボタン、削除ボタン-->
                     <td>
                         <%= f.submit "更新する", class: "btn btn-success" %>
-                             <%= link_to post_path(@post), method: :delete, class:"btn" do %>
-                             記事を削除する<i class="fa-solid fa-trash-can"></i>
-                        <% end %>
+                           <%= link_to post_path(@post), method: :delete, class:"btn" do %>
+                              記事を削除する<i class="fa-solid fa-trash-can"></i>
+                           <% end %>
                     </td>
                 </tr>
             <% end %>
