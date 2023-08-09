@@ -3,25 +3,25 @@ class Post < ApplicationRecord
 
   enum post_status: { draft:0, published:1 } #下書き,投稿のenumステータス
 
-  has_many :favorites,      dependent: :destroy #いいね機能
-  has_many :post_comments,  dependent: :destroy #コメント機能
-  has_many :post_tags,      dependent: :destroy #タグ機能
-  has_many :tag_genres,     through: :post_tags
+  has_many :favorites,                   dependent: :destroy #いいね機能
+  has_many :post_comments,               dependent: :destroy #コメント機能
+  has_many :post_tag_relationships,      dependent: :destroy #タグ機能
+  has_many :post_tags,                   through: :post_tag_relationships
 
   
-  def save_tag_genres(tags) #タグ機能
-    current_tags = self.tag_genres.pluck(:name) unless self.tag_genres.nil?
-    old_tags = current_genres - tags
+  def save_post_tags(tags) #タグ機能
+    current_tags = self.post_tags.pluck(:name) unless self.post_tags.nil?
+    old_tags = current_tags - tags
     new_tags = tags - current_tags
     
     
     old_tags.each do |old_name| #古いタグの削除
-      self.tag_genres.delete TagGenre.find_by(name:old_name)
+      self.post_tags.delete PostTag.find_by(name:old_name)
     end
     
      new_tags.each do |new_name| #新しいタグの保存
-       tag_genre = TagGenre.find_or_create_by(name:new_name)
-       self.tag_genres << tag_genre
+       post_tag = PostTag.find_or_create_by(name:new_name)
+       self.post_tags << post_tag
      end
   end
 
