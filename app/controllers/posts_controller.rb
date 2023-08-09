@@ -30,11 +30,17 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @tag_list = @post_workout.workout_tags.pluck(:name).join(',')
+    @post = Post.find(params[:id])
+    @tag_list = @post.post_tags.pluck(:name).join(',')
   end
   
   def update
      @tag_list = params[:post][:name].split(',')
+  end
+  
+  def destroy
+     post = Post.find(params[:id])
+     post.destroy
   end
   
   def search_tag #検索機能(タグのみ)
