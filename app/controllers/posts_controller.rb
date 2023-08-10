@@ -7,9 +7,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    tag_list = params[:post][:name].split(',')
+    post_tags = params[:post][:tag_id].split(',')
     if  @post.save!
-        @post.save_post_tags(tag_list)
+        @post.save_post_tags(post_tags)
         redirect_to posts_path
     else
         render :new　#保存に失敗したら元のページに戻る
@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    #tags = @post.tags.pluck(:name).join(',')
   end
   
   def show
@@ -25,17 +26,20 @@ class PostsController < ApplicationController
      @user = @post.user
      @post_comment = PostComment.new
      # タグ表示
-     @tag_list = @post.post_tags.pluck(:name).join(',')
-     @post_tags = @post.post_tags
+     @post_tags = @post.post_tags.pluck(:name).join(',')
   end
 
   def edit
     @post = Post.find(params[:id])
-    @tag_list = @post.post_tags.pluck(:name).join(',')
+    @post_tags = @post.post_tags.pluck(:name).join(',')
   end
   
   def update
-     @tag_list = params[:post][:name].split(',')
+     @post = Post.find(params[:id])
+     post_tags = params[:post][:post_tag_id].split(',')
+     @post.update(post_params)
+     @post.save_post_tags(post_tags)
+     redirect_to posts_path
   end
   
   def destroy #記事の削除
@@ -45,9 +49,9 @@ class PostsController < ApplicationController
   end
   
   def search_tag #検索機能(タグのみ)
-    @tag_list = PostTag.all
-    @tag = PostTag.find(params[:tag_genre_id])
-    @posts = @tag.posts
+    @post_tags = PostTag.all
+    @post_tag = PostTag.find(params[:tag_genre_id])
+    @posts = @post_tag.posts
   end
   
   private

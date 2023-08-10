@@ -13,9 +13,7 @@
       </div>
       <!--記事の詳細-->
       <div class="col">
-         <% @post_tags.each do |tag| %>
-             <i class="fa-solid fa-tag"></i>
-         <% end %>
+         <%= @post_tags %>
          <%= @post.title %><br>
          <%= @post.body %>
        <div class="row">
