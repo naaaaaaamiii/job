@@ -13,9 +13,24 @@
       </div>
       <!--記事の詳細-->
       <div class="col">
-         <%= @post_tags %>
-         <%= @post.title %><br>
-         <%= @post.body %>
+        <!--タグ-->
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <td>
+                   <i class="fa-solid fa-hashtag">
+                    <%= @post_tags  %>
+                   </i>
+              </td>
+            </tr>
+            <tr>
+              <td><%= @post.title %></td>
+            </tr>
+            <tr>
+              <td><%= @post.body %></td>
+            </tr>
+          </tbody>
+        </table>
        <div class="row">
              <!--コメント欄-->
             <div id="post_comments">

@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    #tags = @post.tags.pluck(:name).join(',')
+
   end
   
   def show
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   
   def update
      @post = Post.find(params[:id])
-     post_tags = params[:post][:post_tag_id].split(',')
+     post_tags = params[:post][:name].split(',')
      @post.update(post_params)
      @post.save_post_tags(post_tags)
      redirect_to posts_path
