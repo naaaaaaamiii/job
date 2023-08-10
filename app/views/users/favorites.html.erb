@@ -4,10 +4,13 @@
     <div class="col">
       <table class="table">
         <tbody>
+          <% @favorite_posts.each do |post| %>
           <tr>
-            <td><%= link_to @post.title, post_path(@post) %>
+            <td>
+              <%= link_to post.title, post_path(@post) %>
             </td>
           </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
