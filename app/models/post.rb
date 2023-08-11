@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   has_many :post_tag_relationships,      dependent: :destroy #タグ機能
   has_many :post_tags,                   through: :post_tag_relationships
  
+  is_impressionable counter_cache: true #PV数計測
   
   def save_post_tags(tags) #タグ追加する
     current_tags = self.post_tags.pluck(:name) unless self.post_tags.nil?

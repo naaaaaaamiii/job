@@ -14,7 +14,7 @@
                 <th><%= link_to post.title,post_path(post) %></th>
                 <td><i class="fa-regular fa-face-kiss-wink-heart"></i><%= post.favorites.count %></td>
                 <td><i class="fa-regular fa-comment"></i><%= post.post_comments.count %></td>
-                <!--<td>%= post.@tags %></td>-->
+                <td><i class="fa-regular fa-eye"></i><%= post.impressions_count  %></td>
                </tr>
             <% end %>
           </tbody>
