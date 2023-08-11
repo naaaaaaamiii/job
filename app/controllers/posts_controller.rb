@@ -36,9 +36,9 @@ class PostsController < ApplicationController
 
   def update
      @post = Post.find(params[:id])
-     post_tags = params[:post][:name].split(',')
+     tag_list = params[:post][:name].split(',')
      @post.update(post_params)
-     @post.save_post_tags(post_tags)
+     @post.save_post_tags(tag_list)
      redirect_to post_path(@post)
   end
 

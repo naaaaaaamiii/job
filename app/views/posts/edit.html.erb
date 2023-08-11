@@ -1,35 +1,35 @@
 <div class="container">
   <div class="row">
       <div class="col">
-        <table class="table table-borderless">
-          <tbody>
-            <%= form_with model: @post, url:post_path(@post), method: :patch do |f| %>
-                 <tr> <!--タグ登録-->
-                    <td> <%= f.text_field :name,value: @post_tags, placeholder:"タグ(,で区切ると複数タグ登録できます)", class:'form-control' %></td>
-                 </tr>
-                 <tr> <!--タイトルフォーム-->
-                    <td><%= f.text_field :title, placeholder:"タイトル", class:'form-control' %></td>
-                 </tr>
-                 <tr> <!--本文フォーム-->
-                    <td><%= f.text_area :body,rows:"15", placeholder:"本文", class:'form-control' %></td>
-                 </tr>
-                 <tr> <!--サムネ画像投稿-->
-                    <td><%= f.file_field :post_image, accept:"image/*" %></td>
-                 </tr>
-                 <tr> <!--ステータス選択-->
-                    <td><%= f.select :post_status, Post.post_statuses.keys.map{ |k| [t("enums.post.post_status.#{k}"),k]}, {}, {class:"custom-select w-25"} %></td>
-                 </tr>
-                 <tr> <!--保存ボタン、削除ボタン-->
-                    <td>
-                    <%= f.submit "更新する", class: "btn btn-success" %>
-                       <%= link_to post_path(@post), method: :delete, class:"btn" do %>
-                          記事を削除する<i class="fa-solid fa-trash-can"></i>
-                       <% end %>
-                    </td>
-                </tr>
-            <% end %>
-          </tbody>
-        </table>
+        <%= form_with model: @post, url:post_path(@post), method: :patch do |f| %>
+            <table class="table table-borderless">
+              <tbody>
+                     <tr> <!--タグ登録-->
+                        <td> <%= f.text_field :name,value: @post_tags, placeholder:"タグ(,で区切ると複数タグ登録できます)", class:'form-control' %></td>
+                     </tr>
+                     <tr> <!--タイトルフォーム-->
+                        <td><%= f.text_field :title, placeholder:"タイトル", class:'form-control' %></td>
+                     </tr>
+                     <tr> <!--本文フォーム-->
+                        <td><%= f.text_area :body,rows:"15", placeholder:"本文", class:'form-control' %></td>
+                     </tr>
+                     <tr> <!--サムネ画像投稿-->
+                        <td><%= f.file_field :post_image, accept:"image/*" %></td>
+                     </tr>
+                     <tr> <!--ステータス選択-->
+                        <td><%= f.select :post_status, Post.post_statuses.keys.map{ |k| [t("enums.post.post_status.#{k}"),k]}, {}, {class:"custom-select w-25"} %></td>
+                     </tr>
+                     <tr> <!--保存ボタン、削除ボタン-->
+                        <td>
+                        <%= f.submit "更新する", class: "btn btn-success" %>
+                           <%= link_to post_path(@post), method: :delete, class:"btn" do %>
+                              記事を削除する<i class="fa-solid fa-trash-can"></i>
+                           <% end %>
+                        </td>
+                    </tr>
+              </tbody>
+          </table>
+       <% end %>
     </div>
   </div>
 </div>
