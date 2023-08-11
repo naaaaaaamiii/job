@@ -18,9 +18,9 @@
           <tbody>
             <tr>
               <td>
-                 <i class="fa-solid fa-hashtag">
-                  <%= @post_tags  %>
-                 </i>
+                 <% @post_tags.each do |tag| %>
+                    <i class="fa-solid fa-hashtag"></i>
+                 <% end %>
               </td>
             </tr>
             <tr>

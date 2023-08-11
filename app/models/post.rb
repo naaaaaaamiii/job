@@ -9,11 +9,23 @@ class Post < ApplicationRecord
   has_many :post_tags,                   through: :post_tag_relationships
 
   
-  def save_post_tags(post_tags) #タグを新しく追加する
-    post_tags.each do |new_post_tags|
-      self.post_tags.find_or_create_by(name: new_post_tags)
+  def save_post_tags(tags) #タグ追加する
+    current_tags = self.post_tags.pluck(:name) unless self.post_tags.nil?
+    old_tags = current_tags - tags
+    new_tags = tags - current_tags
+
+    # 古いタグを消す
+    old_tags.each do |old_name|
+      self.post_tags.delete WorkoutTag.find_by(name:old_name)
+    end
+
+    # 新しいタグを保存
+    new_tags.each do |new_name|
+      post_tag = PostTag.find_or_create_by(name:new_name)
+      self.post_tags << post_tag
     end
   end
+
   
   def update_post_tags(latest_post_tags) #タグの更新
   
@@ -21,8 +33,7 @@ class Post < ApplicationRecord
         latest_post_tags.each do |latest_post_tag|
           self.post_tags.find_or_sreate_by(name: latest_tag)
         end
-        
-    elsif latest_tags.empty?  #更新するタグがなかったら既存のタグをすべて消去
+    elsif latest_post_tags.empty?  #更新するタグがなかったら既存のタグをすべて消去
       self.post_tags.each do |post_tag|
         self.post_tags.delete(post_tag)
       end
