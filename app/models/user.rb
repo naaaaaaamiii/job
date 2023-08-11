@@ -3,14 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
-  has_many :posts　　　　　#記事がなくなるとサイトが成り立たないのでユーザーが消えても記事は残す
-  has_many :favorites,     dependent: :destroy #いいね
-  has_many :post_comments　#コメント ユーザーが消えてもコメントは残す
 
-  
+  has_many :posts                              #記事がなくなるとサイトが成り立たないのでユーザーが消えても記事は残す
+  has_many :favorites,    dependent: :destroy  #いいね
+  has_many :post_comments                      #コメント ユーザーが消えてもコメントは残す
+
+
   has_one_attached :image
-  
+
   def get_image(width, height)
     unless image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.png')
@@ -18,5 +18,5 @@ class User < ApplicationRecord
     end
       image.variant(resize_to_limit: [width, height]).processed
   end
-  
+
 end
