@@ -34,7 +34,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    @post_tags = @post.post_tags.pluck(:name).join(',')
+    @post_tags = @post.post_tags.pluck(:name).join(',')  #タグの編集
   end
 
   def update
