@@ -5,7 +5,7 @@
             <table class="table table-borderless">
               <tbody>
                      <tr> <!--タグ登録-->
-                        <td> <%= f.text_field :name,value: @post_tags, placeholder:"タグ(,で区切ると複数タグ登録できます)", class:'form-control' %></td>
+                        <td> <%= f.text_field :name,value: @tag_list, placeholder:"タグ(,で区切ると複数タグ登録できます)", class:'form-control' %></td>
                      </tr>
                      <tr> <!--タイトルフォーム-->
                         <td><%= f.text_field :title, placeholder:"タイトル", class:'form-control' %></td>

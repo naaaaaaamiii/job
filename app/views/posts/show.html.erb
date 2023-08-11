@@ -19,7 +19,7 @@
             <tr>
               <td>
                  <% @post_tags.each do |tag| %>
-                    <i class="fa-solid fa-hashtag"></i>
+                    <i class="fa-solid fa-hashtag"></i><%= tag.post_tag.name %>
                  <% end %>
               </td>
             </tr>

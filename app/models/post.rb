@@ -16,7 +16,7 @@ class Post < ApplicationRecord
 
     # 古いタグを消す
     old_tags.each do |old_name|
-      self.post_tags.delete WorkoutTag.find_by(name:old_name)
+      self.post_tags.delete PostTag.find_by(name:old_name)
     end
 
     # 新しいタグを保存
