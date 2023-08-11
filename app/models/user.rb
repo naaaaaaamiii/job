@@ -4,9 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  has_many :posts
-  has_many :favorites, dependent: :destroy #いいね
-  has_many :post_comments　#コメント
+  has_many :posts　　　　　#記事がなくなるとサイトが成り立たないのでユーザーが消えても記事は残す
+  has_many :favorites,     dependent: :destroy #いいね
+  has_many :post_comments　#コメント ユーザーが消えてもコメントは残す
+  has_many :read_counts,   dependent: :destroy
   
   has_one_attached :image
   

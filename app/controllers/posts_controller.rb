@@ -25,8 +25,11 @@ class PostsController < ApplicationController
      @post = Post.find(params[:id])
      @user = @post.user
      @post_comment = PostComment.new
-     # タグ表示
-     @post_tags = @post.post_tag_relationships
+     @post_tags = @post.post_tag_relationships #タグ表示
+     @post_detail = Post.find(params[:id])
+        unless ViewCount.find_by(user_id: current_user.id, book_id: @book_detail.id)
+          current_user.view_counts.create(book_id: @book_detail.id)
+        end
   end
 
   def edit
