@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "homes#top"
 
-  # タグの検索で使用する
-  get "search_tag" => "posts#search_tag"
+  get "search" => "searchess#search" # 検索機能
 
   resources :posts, only: [:index, :show, :edit, :create, :update, :destroy, :new] do
     resources :post_comments, only: [:create, :destroy]

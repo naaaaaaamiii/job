@@ -7,9 +7,9 @@ class Post < ApplicationRecord
   has_many :post_comments,               dependent: :destroy #コメント機能
   has_many :post_tag_relationships,      dependent: :destroy #タグ機能
   has_many :post_tags,                   through: :post_tag_relationships
- 
+
   is_impressionable counter_cache: true #PV数計測
-  
+
   def save_post_tags(tags) #タグ追加する
     current_tags = self.post_tags.pluck(:name) unless self.post_tags.nil?
     old_tags = current_tags - tags
@@ -27,9 +27,9 @@ class Post < ApplicationRecord
     end
   end
 
-  
+
   def update_post_tags(latest_post_tags) #タグの更新
-  
+
     if self.post_tags.empty?        #既に登録していたタグが消去されていたら追加のみ行う
         latest_post_tags.each do |latest_post_tag|
           self.post_tags.find_or_sreate_by(name: latest_tag)
@@ -42,12 +42,12 @@ class Post < ApplicationRecord
       current_post_tags = self.post_tags.pluck(:name)
       old_post_tags = current_post_tags - latest_post_tags
       new_post_tags = latest_post_tags - current_post_tags
-      
+
       old_post_tags.each do |old_post_tag|
         post_tag = self.post_tags.find_by(name: old_post_tag)
         self.post_tags.delete(post_tag) if post_tag.present?
       end
-      
+
       new_post_tags.each do |new_post_tag|
         self.post_tags.find_or_create_by(name: new_post_tag)
       end
