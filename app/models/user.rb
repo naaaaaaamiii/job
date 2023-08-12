@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :favorites,    dependent: :destroy  #いいね
   has_many :post_comments                      #コメント ユーザーが消えてもコメントは残す
  
+   def self.looks(search, word) #検索方法
+      @user = User.where("title LIKE?","%#{word}%")
+   end
+ 
   has_one_attached :image
 
   def get_image(width, height)
