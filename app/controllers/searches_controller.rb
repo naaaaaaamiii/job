@@ -1,10 +1,7 @@
 class SearchesController < ApplicationController
-  def search
-    @range = params[:range]
-      if @range == "User"
-         @users = User.looks(params[:search], params[:word])
-      else
-         @books = Book.looks(params[:search], params[:word])
-      end
+  def search 
+    @q = Post.ransack(params[:q])
+    @post = @q.result(distinct: true)
+    @result = params[:q]&.values&.reject(&:blank?)
   end
 end

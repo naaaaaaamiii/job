@@ -7,8 +7,6 @@ class User < ApplicationRecord
   has_many :posts                              #記事がなくなるとサイトが成り立たないのでユーザーが消えても記事は残す
   has_many :favorites,    dependent: :destroy  #いいね
   has_many :post_comments                      #コメント ユーザーが消えてもコメントは残す
-
-  searchable_attributes %w[name]
  
   has_one_attached :image
 

@@ -51,12 +51,6 @@ class PostsController < ApplicationController
      redirect_to request.referer
   end
 
-  def search_tag #検索機能(タグのみ)
-    @post_tags = PostTag.all
-    @post_tag = PostTag.find(params[:tag_genre_id])
-    @posts = @post_tag.posts
-  end
-
   private
 
   def post_params

@@ -9,7 +9,6 @@ class Post < ApplicationRecord
   has_many :post_tags,                   through: :post_tag_relationships
 
   is_impressionable counter_cache: true #PV数計測
-  searchable_attributes %w[title] #検索対象の記述
   
   
   def save_post_tags(tags) #タグ追加する
