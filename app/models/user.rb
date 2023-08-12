@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_many :favorites,    dependent: :destroy  #いいね
   has_many :post_comments                      #コメント ユーザーが消えてもコメントは残す
 
-
+  searchable_attributes %w[name]
+ 
   has_one_attached :image
 
   def get_image(width, height)
