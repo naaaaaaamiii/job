@@ -50,6 +50,8 @@ class PostsController < ApplicationController
      post.destroy
      redirect_to request.referer
   end
+  
+  
 
   private
 

@@ -2,7 +2,17 @@
   <div class="row">
     <div class="col">
       <table class="table">
-        
+         <tbody>
+            <% @post.each do |post| %>
+               <tr>
+                <td><%= image_tag post.get_post_image(50,50), class:'rounded-circle' %></td>
+                <th><%= link_to post.title,post_path(post) %></th>
+                <td><i class="fa-regular fa-face-kiss-wink-heart"></i><%= post.favorites.count %></td>
+                <td><i class="fa-regular fa-comment"></i><%= post.post_comments.count %></td>
+                <td><i class="fa-regular fa-eye"></i><%= post.impressions_count  %></td>
+               </tr>
+            <% end %>
+          </tbody>
       </table>
     </div>
   </div>
