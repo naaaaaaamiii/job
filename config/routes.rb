@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update, :new] do
       member do
         get :favorites  #いいねされた記事の一覧表示のため
+        get :follows, :followers #フォローした人されてる人の一覧表示
       end
+      resource :relationships, only: [:create, :destroy]
   end
 end
 

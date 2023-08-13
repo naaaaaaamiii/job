@@ -10,6 +10,23 @@ class User < ApplicationRecord
   has_many :followers, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy #フォローした
   has_many :followeds, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy #フォローされた
  
+  #フォロー・フォロワーの一覧を取得
+  has_many :following_users, through: :followers, source: :followed
+  has_many :follower_users, through: :followeds, source: :follower
+ 
+ 
+  def follow(user_id) #フォローする時
+    followers.create(followed_id: user_id)
+  end
+ 
+  def unfollow(user_id) #フォローを外す時
+    followers.find_by(followed_id: user_id).destroy
+  end
+  
+  def following?(user) #フォローしてる？
+    following_users.include?(user)
+  end
+ 
    def self.looks(search, word) #検索方法
       @user = User.where("title LIKE?","%#{word}%")
    end
