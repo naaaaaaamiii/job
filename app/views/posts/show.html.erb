@@ -33,26 +33,26 @@
         </table>
        </div>
        <div class="col-3">
-        <!--Userプロフィール-->
-        <%= render 'users/index', user: @user %>
-          <div class="row">
-             <!--記事の編集-->
-             <%= link_to edit_post_path(@post), class:"btn btn-outline-secondary" do %>
+        <!--記事の編集-->
+          <%= link_to edit_post_path(@post), class:"btn btn-outline-secondary" do %>
                記事の編集
-             <% end %>
+          <% end %>
+          <div class="row m-3">
+          <!--Userプロフィール-->
+             <%= render 'users/index', user: @user %>
+          </div>
+       </div>
+       <div class="row mx-5">
+        <div class="col">
+           <!--コメント欄-->
+          <div id="post_comments">
+              <%= render 'post_comments/index', post: @post, post_comments: @post_comments %><!--コメント一覧-->
+          </div>
+          <div id="comment_form">
+              <%= render 'post_comments/form', post: @post, post_comment: @post_comment %><!--コメント入力フォーム-->
           </div>
         </div>
-    </div>
-    <div class="row mx-5">
-      <div class="col">
-         <!--コメント欄-->
-        <div id="post_comments">
-            <%= render 'post_comments/index', post: @post, post_comments: @post_comments %><!--コメント一覧-->
-        </div>
-        <div id="comment_form">
-            <%= render 'post_comments/form', post: @post, post_comment: @post_comment %><!--コメント入力フォーム-->
-        </div>
-      </div>
-    </div>
+       </div>
+   </div>
 </div>
  
