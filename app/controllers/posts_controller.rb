@@ -20,16 +20,16 @@ class PostsController < ApplicationController
     @posts = Post.all
     @rank_posts = Post.order(impressions_count: 'DESC') #pv数の多い順に並び変える
   end
-  
+
    impressionist :actions=> [:show] #showページを開いたらPV数を計測
-  
+
   def show
      @post = Post.find(params[:id])
      @user = @post.user
      @post_comment = PostComment.new
      @post_tags = @post.post_tag_relationships #タグ表示
      impressionist(@post, nil, unique: [:session_hash]) #pv数計測
-  
+
   end
 
   def edit
@@ -50,8 +50,8 @@ class PostsController < ApplicationController
      post.destroy
      redirect_to request.referer
   end
-  
-  
+
+
 
   private
 
