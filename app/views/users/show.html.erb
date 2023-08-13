@@ -47,7 +47,7 @@
       <div class="col.justify-content-around m-3">
          <!--投稿一覧-->
          <div class="card shadow" style="width: 15rem;">
-             <%= image_tag post.get_post_image(100,100) %>
+             <%= image_tag post.get_post_image(500,500) %>
              <%=link_to post.title, post_path(post) %><br>
              <%= l post.created_at, format: :short %>
              <i class="fa-regular fa-heart"> <%= post.favorites.count %></i>
