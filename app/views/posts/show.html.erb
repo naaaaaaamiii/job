@@ -33,12 +33,14 @@
         </table>
        </div>
        <div class="col-3">
+        <% if current_user == @post.user %>
         <!--記事の編集-->
           <%= link_to edit_post_path(@post), class:"btn btn-outline-secondary" do %>
                記事の編集
           <% end %>
+        <% end %>
           <div class="row m-3">
-          <!--Userプロフィール-->
+          <!--この記事を書いたUserプロフィール-->
              <%= render 'users/index', user: @user %>
           </div>
        </div>
