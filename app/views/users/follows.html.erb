@@ -1,11 +1,20 @@
 <div class="container">
-  <div class="row">
+  <div class="row my-5">
     <div class="col">
-      <h3>フォロー中</h3><%= user.followers.count %>
-      
+      <h3>フォロー中 <%= @user.followers.count %></h3>
+      <% @users.each do |user| %>
+       <table class="table">
+         <tbody>
+           <tr>
+             <th><%= image_tag user.get_image(100,100) %></th>
+             <th><%= user.name %></th>
+          </tr>
+         </tbody>
+       </table>
+      <% end %>
     </div>
     <div class="col">
-      <h3>フォロワー</h3><%= user.followeds.count %>
+      <h3>フォロワー <%= @user.followeds.count %></h3>
     </div>
   </div>
 </div>
