@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
+  sessions: "admin/sessions"
+}
 
-  devise_for :admins
-  devise_for :users
+  devise_for :customers,skip: [:passwords], controllers: {
+  registrations: "public/registrations",
+  sessions: 'public/sessions'
+}
   root to: "homes#top"
 
   get "search" => "searches#search" # 検索機能
