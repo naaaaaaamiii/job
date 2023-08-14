@@ -41,7 +41,10 @@
         <% end %>
           <div class="row m-3">
           <!--この記事を書いたUserプロフィール-->
-             <%= render 'users/index', user: @user %>
+          <%= render 'users/index', user: @user %>
+          <div id="follow_<%= @user.id %>">
+             <%= render 'relationships/follow_btn', user: @user %><!--フォローボタン-->
+          </div>
           </div>
        </div>
     </div>
