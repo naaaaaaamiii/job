@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @posts = @user.posts.published.page(params[:page]).reverse_order #公開記事のみ表示する
   end
 
   def edit
@@ -37,6 +37,10 @@ class UsersController < ApplicationController
   def followers #フォローされた一覧
     @user = User.find(params[:id])
     @user = @user.follower_users
+  end
+  
+  def confirm #下書きした記事のみ表示
+    @posts = current_user.posts.draft.page(params[:page]).reverse_order
   end
  
   private
