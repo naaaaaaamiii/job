@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new
+    @user = User.new(user_params)
   end
   
   def index
@@ -27,7 +27,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     favorites = Favorite.where(user_id: @user.id).pluck(:post_id)
     @favorite_posts = Post.find(favorites)
-    @post = Post.find(params[:id])
   end
   
   def follows #フォローした一覧
@@ -42,7 +41,7 @@ class UsersController < ApplicationController
  
   private
    def user_params
-    params.require(:user).permit(:name, :introduction, :image)
+    params.require(:user).permit(:name, :introduction, :image, :post_status)
    end
  
 end
