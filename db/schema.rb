@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 2023_08_13_053028) do
     t.integer "user_id", null: false
     t.string "title", null: false
     t.text "body", null: false
-    t.boolean "post_status", default: false, null: false
+    t.integer "post_status", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "impressions_count", default: 0

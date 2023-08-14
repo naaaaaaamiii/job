@@ -13,7 +13,7 @@
             <% @posts.each do |post| %>
                <tr>
                   <th><%= post.title %></th>
-                  <th><%= post.post_status %></th>
+                  <th><%= post.post_status_i18n %></th>
                   <th>
                     <%= link_to edit_post_path(post), class:"btn btn-outline-secondary rounded-circle" do %>
                        <i class="fa-regular fa-pen-to-square"></i>
