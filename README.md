@@ -1,4 +1,4 @@
-# wakuwaku
+# Open job drem
 ​
 ## サイト概要
 ### サイトテーマ
