@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  # 管理者
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
 
+  # ユーザー
   devise_for :users
   root to: "homes#top"
 
@@ -21,8 +23,11 @@ Rails.application.routes.draw do
         get :favorites  #いいねされた記事の一覧表示のため
         get :follows, :followers #フォローした人されてる人の一覧表示
       end
-      resource :relationships, only: [:create, :destroy]
+      resource :relationships, only: [:create, :destroy] # フォロー機能
   end
+  
+  resources :event
+  
 end
 
  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
