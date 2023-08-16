@@ -2,7 +2,9 @@
   <h3 class>New Event</h3>
    <div class="row">
      <div class="col-6">
-       <p>画像プレビュー</p>
+        <div id="post_images" style="display: none;">
+          <p id="preview"></p>
+        </div>
      </div>
      <div class="col-6">
         <%= form_with model:@event, url:events_path do |f| %>
@@ -13,17 +15,23 @@
               <tr><th>
                 <label class>
                 <i class="fa-regular fa-image"></i>
-                <%= f.file_field :post_image, accept: "image/*", class: "hidden" %>
+                <%= f.file_field :post_image, accept: "image/*", onchange: "loadImage(this);" %>
                 </label>
               </th></tr>
               <tr><td><%= f.text_field :event_name, placeholder:"イベントタイトル", class:'form-control' %></td></tr>
               <tr><td><%= f.text_area :event_introduction,rows:"15", placeholder:"イベント詳細", class:'form-control' %></td></tr>
               <tr>
                 <td>
+                
                 <%= f.radio_button :event_status, :offline %><%= f.label :"オフライン" %>
                 <%= f.radio_button :event_status, :online %><%= f.label :"オンライン" %>
                 </td>
               </tr>
+              <div id="url">
+                <tr><td><%= f.text_area :url, placeholder:"オンライン開催URL", class:'form-control' %></td></tr>
+              </div>
+              <tr><td><%= f.text_field :postal_code, placeholder:"〒郵便番号", class:'form-control' %></td></tr>
+              <tr><td><%= f.text_area :adress,rows:"4", placeholder:"住所", class:'form-control'%></td></tr>
             </tbody>
           </table>
         <% end %>
