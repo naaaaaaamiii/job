@@ -1,17 +1,19 @@
 <div class="container">
   <h3 class>New Event</h3>
-  <div class="row">
-    <%= form_with model:@event, url:events_path do |f| %>
-      <div class="col">
-        
-      </div>
-      <div class="col">
+   <div class="row">
+     <div class="col-6">
+       kkkkkkkkkkkk
+     </div>
+     <div class="col-6">
+        <%= form_with model:@event, url:events_path do |f| %>
           <table class="table table-borderless">
             <tbody>
-              <tr><th></th></tr>
+              <tr><th><%= f.date_select :sample_at %></th></tr>
+              <tr><th><%= f.text_field :title, placeholder:"イベントタイトル", class:'form-control' %></th></tr>
+              <tr><th><%= f.text_area :introduction,rows:"15", placeholder:"イベント詳細", class:'form-control' %></th></tr>
             </tbody>
           </table>
+        <% end %>
       </div>
-    <% end %>
   </div>
 </div>
