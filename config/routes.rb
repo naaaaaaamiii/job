@@ -25,9 +25,9 @@ Rails.application.routes.draw do
       end
       resource :relationships, only: [:create, :destroy] # フォロー機能
   end
-  
-  resources :event
-  
+
+  resources :events
+
 end
 
  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

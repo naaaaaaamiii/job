@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :post_comments                      #コメント ユーザーが消えてもコメントは残す
   has_many :followers, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy #フォローした
   has_many :followeds, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy #フォローされた
+  has_many :events #イベント
  
   #フォロー・フォロワーの一覧を取得
   has_many :following_users, through: :followers, source: :followed
