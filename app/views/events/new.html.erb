@@ -10,7 +10,10 @@
         <%= form_with model:@event, url:events_path do |f| %>
           <table class="table table-borderless">
             <tbody>
-              <tr><th><%= f.date_field :sample_at %></th></tr>
+              <tr><th>
+                <%= f.date_field :sample_at %>
+                <%= f.submit "申請する", class: "btn btn-success" %>
+              </th></tr>
               <tr><th><%= f.text_field :name,value: @tag_list, placeholder:"タグ(,で区切ると複数タグ登録できます)", class:'form-control' %></th></tr>
               <tr><th>
                 <label class>
@@ -23,15 +26,13 @@
               <tr>
                 <td>
                 
-                <%= f.radio_button :event_status, :offline %><%= f.label :"オフライン" %>
+                <%= f.radio_button :event_status, :offline %><%= f.label :"オフライン"%>
                 <%= f.radio_button :event_status, :online %><%= f.label :"オンライン" %>
                 </td>
               </tr>
-              <div id="url">
-                <tr><td><%= f.text_area :url, placeholder:"オンライン開催URL", class:'form-control' %></td></tr>
-              </div>
-              <tr><td><%= f.text_field :postal_code, placeholder:"〒郵便番号", class:'form-control' %></td></tr>
-              <tr><td><%= f.text_area :adress,rows:"4", placeholder:"住所", class:'form-control'%></td></tr>
+              <tr><td><%= f.text_area :url, placeholder:"オンライン開催URL", class:'form-control' %></td></tr>
+              <tr><td><%= f.text_field :postal_code, placeholder:"〒 郵便番号", class:'form-control' %></td></tr>
+              <tr><td><%= f.text_area :adress,rows:"4", placeholder:"住所", class:'form-control'%></td> </tr>
             </tbody>
           </table>
         <% end %>
