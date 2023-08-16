@@ -16,9 +16,14 @@
                 <%= f.file_field :post_image, accept: "image/*", class: "hidden" %>
                 </label>
               </th></tr>
-              <tr><th><%= f.text_field :event_name, placeholder:"イベントタイトル", class:'form-control' %></th></tr>
-              <tr><th><%= f.text_area :event_introduction,rows:"15", placeholder:"イベント詳細", class:'form-control' %></th></tr>
-              <tr><th><%= f.radio_button :event_status %></th></tr>
+              <tr><td><%= f.text_field :event_name, placeholder:"イベントタイトル", class:'form-control' %></td></tr>
+              <tr><td><%= f.text_area :event_introduction,rows:"15", placeholder:"イベント詳細", class:'form-control' %></td></tr>
+              <tr>
+                <td>
+                <%= f.radio_button :event_status, :offline %><%= f.label :"オフライン" %>
+                <%= f.radio_button :event_status, :online %><%= f.label :"オンライン" %>
+                </td>
+              </tr>
             </tbody>
           </table>
         <% end %>
