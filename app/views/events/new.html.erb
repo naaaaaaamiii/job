@@ -2,15 +2,23 @@
   <h3 class>New Event</h3>
    <div class="row">
      <div class="col-6">
-       kkkkkkkkkkkk
+       <p>画像プレビュー</p>
      </div>
      <div class="col-6">
         <%= form_with model:@event, url:events_path do |f| %>
           <table class="table table-borderless">
             <tbody>
-              <tr><th><%= f.date_select :sample_at %></th></tr>
-              <tr><th><%= f.text_field :title, placeholder:"イベントタイトル", class:'form-control' %></th></tr>
-              <tr><th><%= f.text_area :introduction,rows:"15", placeholder:"イベント詳細", class:'form-control' %></th></tr>
+              <tr><th><%= f.date_field :sample_at %></th></tr>
+              <tr><th><%= f.text_field :name,value: @tag_list, placeholder:"タグ(,で区切ると複数タグ登録できます)", class:'form-control' %></th></tr>
+              <tr><th>
+                <label class>
+                <i class="fa-regular fa-image"></i>
+                <%= f.file_field :post_image, accept: "image/*", class: "hidden" %>
+                </label>
+              </th></tr>
+              <tr><th><%= f.text_field :event_name, placeholder:"イベントタイトル", class:'form-control' %></th></tr>
+              <tr><th><%= f.text_area :event_introduction,rows:"15", placeholder:"イベント詳細", class:'form-control' %></th></tr>
+              <tr><th><%= f.radio_button :event_status %></th></tr>
             </tbody>
           </table>
         <% end %>
