@@ -60,9 +60,8 @@ ActiveRecord::Schema.define(version: 2023_08_15_083557) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.integer "admin_id", null: false
     t.integer "user_id", null: false
-    t.integer "tag_id", null: false
+    t.integer "tag_id"
     t.string "event_name", null: false
     t.string "date", null: false
     t.text "event_introduction", null: false
