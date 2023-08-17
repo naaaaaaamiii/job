@@ -11,7 +11,7 @@
           <table class="table table-borderless">
             <tbody>
               <tr><th>
-                <%= f.date_field :sample_at %>
+                <%= f.date_field :date %>
                 <%= f.submit "申請する", class: "btn btn-success" %>
               </th></tr>
               <tr><th><%= f.text_field :name,value: @tag_list, placeholder:"タグ(,で区切ると複数タグ登録できます)", class:'form-control' %></th></tr>
