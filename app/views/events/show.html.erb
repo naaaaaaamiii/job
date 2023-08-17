@@ -1,7 +1,9 @@
 <%= stylesheet_link_tag 'events' %>
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-center">
+    <div class="col">
       <%= image_tag @event.get_event_image(800,800) %>
+    </div>
   </div>
   <div class="row">
      <table class="table table-borderless">
@@ -34,7 +36,7 @@
              <td><p class="dai">5. 主催者</p></td>
            </tr>
            <tr>
-             <td><%= @user.name %></td>
+             <td><%= @user %></td>
            </tr>
            
        </tbody>
@@ -42,3 +44,4 @@
   </div>
   </div>
 </div>
+ <%= render partial: 'event', locals: { event: @event, isDetail: true } %>
