@@ -8,13 +8,14 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     @event.save!
-    redirect_to request.referer
+    redirect_to event_path(@event)
   end
   
   def index
   end
   
   def show
+    @event = Event.find(params[:id])
   end
   
   
