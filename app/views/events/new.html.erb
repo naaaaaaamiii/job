@@ -2,7 +2,7 @@
   <h3 class>New Event</h3>
    <div class="row">
      <div class="col-6">
-        <div id="post_images" style="display: none;">
+        <div id="event_images" style="display: none;">
           <p id="preview"></p>
         </div>
      </div>
@@ -18,7 +18,7 @@
               <tr><th>
                 <label class>
                 <i class="fa-regular fa-image"></i>
-                <%= f.file_field :post_image, accept: "image/*", onchange: "loadImage(this);" %>
+                <%= f.file_field :event_image, accept: "image/*", onchange: "avatarImage(this);"%>
                 </label>
               </th></tr>
               <tr><td><%= f.text_field :event_name, placeholder:"イベントタイトル", class:'form-control' %></td></tr>
