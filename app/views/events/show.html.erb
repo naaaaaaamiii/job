@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col">
-      <%= image_tag @event.get_event_image(800,800) %>
+      <%= image_tag @event.get_event_image(700,700) %>
     </div>
   </div>
   <div class="row">
@@ -44,4 +44,3 @@
   </div>
   </div>
 </div>
- <%= render partial: 'event', locals: { event: @event, isDetail: true } %>
