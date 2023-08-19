@@ -12,7 +12,6 @@
             <tbody>
               <tr><th>
                 <%= f.datetime_field :date, class: "form-control" %>
-                <%= f.submit "申請する", class: "btn btn-success" %>
               </th></tr>
               <tr><th>
                 <label class>
@@ -32,6 +31,7 @@
               <tr><td><%= f.text_area :url, placeholder:"オンライン開催URL", class:'form-control' %></td></tr>
               <tr><td><%= f.text_field :postal_code, placeholder:"〒 郵便番号", class:'form-control' %></td></tr>
               <tr><td><%= f.text_area :adress,rows:"4", placeholder:"住所", class:'form-control'%></td> </tr>
+              <tr><td><%= f.submit "更新する", class: "btn btn-success" %></td></tr>
             </tbody>
           </table>
         <% end %>

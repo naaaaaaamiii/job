@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2023_08_15_083557) do
     t.integer "creator_id", null: false
     t.integer "tag_id"
     t.string "event_name", null: false
-    t.string "date", null: false
+    t.datetime "date", null: false
     t.text "event_introduction", null: false
     t.string "postal_code"
     t.string "adress"
