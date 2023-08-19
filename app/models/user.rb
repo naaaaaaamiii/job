@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :attendees
   has_many :events,    through: :attendees #イベント
  
+ 
   #フォロー・フォロワーの一覧を取得
   has_many :following_users, through: :followers, source: :followed
   has_many :follower_users, through: :followeds, source: :follower

@@ -42,5 +42,12 @@
        </tbody>
      </table>
   </div>
+  <div class="row">
+       <% if current_user == @event.user %>
+        <!--イベントの編集-->
+          <%= link_to edit_event_path(@event), class:"btn btn-outline-secondary" do %>
+               イベントの編集
+          <% end %>
+        <% end %>
   </div>
 </div>

@@ -1,16 +1,19 @@
  <div class="row">
    <% events.each do |event| %>
-      <div class="col my-3">
+      <div class="col-11 my-3">
         <div class="event-card">
               <div class="card" style="width: 30rem;">
                 <a href="/events/<%= event.id %>" class="card text-dark">
-                    更新日<%= event.updated_at %>
+                    更新日<%= event.created_at.strftime('%Y/%m/%d') %>
                     <%= image_tag event.get_event_image(300,300) %>
                     <h4 class="card-title"><%= event.event_name %></h4>
                     <p class="card-text"><%= event.event_introduction %></p>
                 </a>
               </div>
         </div>
+      </div>
+      <div class="col">
+        
       </div>
     <% end %>
  </div>
