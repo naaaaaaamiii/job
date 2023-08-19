@@ -48,7 +48,7 @@
           <%= link_to edit_event_path(@event), class:"btn btn-success" do %>
                編集
           <% end %>
-          <%= link_to event_path(@event), class:"btn btn-danger" do %>
+          <%= link_to event_path(@event), class:"btn btn-danger", method: :delete do %>
                削除
           <% end %>
         <% end %>
