@@ -43,8 +43,8 @@
      </table>
   </div>
   <div class="row">
+       <!--イベントの編集-->
        <% if current_user == @event.creator %>
-        <!--イベントの編集-->
           <%= link_to edit_event_path(@event), class:"btn btn-outline-secondary" do %>
                イベントの編集
           <% end %>
