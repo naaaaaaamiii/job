@@ -22,13 +22,14 @@ Rails.application.routes.draw do
       member do
         get :favorites  #いいねされた記事の一覧表示のため
         get :follows, :followers #フォローした人されてる人の一覧表示
+        get :myevents #参加イベント一覧
       end
       resource :relationships, only: [:create, :destroy] # フォロー機能
   end
 
   resources :events do
     member do
-      get :attendees #参加者一覧
+      get :attendees#参加者一覧
     end
     resource :attendees, only: [:create, :destroy] #イベントに参加する/参加しない
   end

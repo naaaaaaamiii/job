@@ -42,6 +42,22 @@ class UsersController < ApplicationController
   def confirm #下書きした記事のみ表示
     @posts = current_user.posts.draft.page(params[:page]).reverse_order
   end
+  
+  def myevents
+    if params[:event_type] == "created_events"
+      @myevents = current_user.events.where(creator_id: current_user.id).page(params[:page]).per(8)
+    elsif params[:event_type] == "upcoming_events"
+      @myevents = current_user.events.where(creator_id: current_user.id).where("date >= ?", Time.now).page(params[:page]).per(8)
+    elsif params[:event_type] == "past_events"
+      @myevents = current_user.events.where("date < ?", Time.now).page(params[:page]).per(8)
+    elsif params[:event_type] == "attended_events"
+      @myevents = Event.joins(:attendees).where(attendees: { user_id: current_user.id }).where.not(creator_id: current_user.id).page(params[:page]).per(8)
+    elsif params[:event_type] == "past_attended_events"
+      @myevents = Event.joins(:attendees).where(attendees: { user_id: current_user.id }).where("date < ?", Time.now).where.not(creator_id: current_user.id).page(params[:page]).per(8)
+    else
+      @myevents = Event.joins(:attendees).where(attendees: { user_id: current_user.id }).page(params[:page]).per(8)
+    end
+  end
  
   private
    def user_params
