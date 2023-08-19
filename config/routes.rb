@@ -28,9 +28,9 @@ Rails.application.routes.draw do
 
   resources :events do
     member do
-      get :atendee, :atendees #参加者一覧
+      get :attendees #参加者一覧
     end
-    resource :atendees, only: [:create, :destroy] #イベントに参加する/参加しない
+    resource :attendees, only: [:create, :destroy] #イベントに参加する/参加しない
   end
 
 end

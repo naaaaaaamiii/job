@@ -6,6 +6,12 @@ class Event < ApplicationRecord
   
   enum event_status: { offline: 0, online: 1 } #イベント開催オフラインかオンラインか
   
+  def includesUSesr?(user) #ユーザーがイベントの参加者かどうか
+    attendees.exists?(attendee_id: user_id)
+  end
+  
+  
+  
   has_one_attached :event_image
   
   def get_event_image(width,height)
