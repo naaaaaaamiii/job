@@ -6,9 +6,12 @@ class EventsController < ApplicationController
   
   def create
     @event = Event.new(event_params)
-    @event.user_id = current_user.id
-    @event.save!
-    redirect_to event_path(@event)
+    @event.creator = current_user
+    if @event.save!
+     redirect_to event_path(@event)
+    else
+      render "new"
+    end
   end
   
   def index
@@ -17,7 +20,6 @@ class EventsController < ApplicationController
   
   def show
     @event = Event.find(params[:id])
-    @user = @event.user_id
   end
   
   
