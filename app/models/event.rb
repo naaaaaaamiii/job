@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
-  has_many :user, through: :attendees
   has_many :attendees
   belongs_to :creator, class_name: "User"
+  has_many :users, through: :attendees
   
   
   enum event_status: { offline: 0, online: 1 } #イベント開催オフラインかオンラインか
