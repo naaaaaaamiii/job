@@ -67,4 +67,11 @@
              <%= link_to '会員登録して参加する', new_user_session_path, class: 'btn btn-primary mr-3' %>
       <% end %>
   </div>
+  <div class="row">
+    <% @event.attendees.each do |user| %>
+　　   <li style="list-style: none;">
+　　     
+　　   </li>
+    <% end %> 
+  </div>
 </div>

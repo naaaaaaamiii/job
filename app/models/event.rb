@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  has_many :user, through: :atten
+  has_many :user, through: :attendees
   has_many :attendees
   belongs_to :creator, class_name: "User"
   
