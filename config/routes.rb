@@ -26,7 +26,12 @@ Rails.application.routes.draw do
       resource :relationships, only: [:create, :destroy] # フォロー機能
   end
 
-  resources :events
+  resources :events do
+    member do
+      get :atendee, :atendees #参加者一覧
+    end
+    resource :atendees, only: [:create, :destroy] #イベントに参加する/参加しない
+  end
 
 end
 

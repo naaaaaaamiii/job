@@ -1,5 +1,5 @@
 <div class="container">
-  <h3 class>New Event</h3>
+  <h3 class>Edit Event</h3>
    <div class="row">
      <div class="col-6">
         <div id="event_images" style="display: none;">
@@ -7,7 +7,7 @@
         </div>
      </div>
      <div class="col-6">
-        <%= form_with model:@event, url:events_path do |f| %>
+        <%= form_with model:@event, url:edit_event_path(@event) do |f| %>
           <table class="table table-borderless">
             <tbody>
               <tr><th>
@@ -38,4 +38,3 @@
       </div>
   </div>
 </div>
-
