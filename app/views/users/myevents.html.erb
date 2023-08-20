@@ -10,8 +10,7 @@
     &nbsp;&nbsp;
     <%= link_to "参加完了イベント", myevents_user_path(event_type: "past_attended_events"), class: "btn btn-primary" %>
   </div>
-  
-  <% if @myevents.any? %>
+
     <% @myevents.each do |event| %>
       <div class="card mb-3">
         <div class="card-body">
@@ -22,13 +21,4 @@
         </div>
       </div>
     <% end %>
-    <%= paginate @myevents %>
-  <% else %>
-    <% unless ["attended_events", "past_attended_events"].include?(params[:event_type]) %>
-      <p>作成したイベントはありません。</p>
-      <%= link_to "イベントを作成してみる", new_event_path %>
-    <% else%>
-      <p>参加のイベントはありません</p>
-    <% end %>
-  <% end %>
-</div>
+ 
