@@ -19,6 +19,10 @@
   box-sizing: border-box;
 }
 
+// テストデプロイ
+body {
+  background-image: image-url("hoge.jpg");} 
+
 .swiper {
   width: 400px;
   height: 300px;
