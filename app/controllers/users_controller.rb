@@ -57,6 +57,7 @@ class UsersController < ApplicationController
     else
       @myevents = Event.joins(:attendees).where(attendees: { user_id: current_user.id }).page(params[:page]).per(8)
     end
+    @myevents = current_user.events.where(creator: current_user).page(params[:page]).per(8)
   end
  
   private
