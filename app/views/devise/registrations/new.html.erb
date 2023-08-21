@@ -1,8 +1,5 @@
 <%= stylesheet_link_tag 'signup' %>
 <div class="box1">
-  <%= render "devise/shared/error_messages", resource: resource %>
-</div>
-<div class="box2">
   <div class="box-inner">
       <h2>Sign up</h2>
        <%= form_with model:@user, url: user_registration_path do |f| %>
@@ -33,4 +30,7 @@
       <% end %>
       <%= render "devise/shared/links" %>
   </div>
+</div>
+<div class="box2">
+  <%= render "devise/shared/error_messages", resource: resource %>
 </div>
