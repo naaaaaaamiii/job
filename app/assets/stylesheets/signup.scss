@@ -4,11 +4,10 @@
   text-decoration: none;
 }
 
-.box1 {
+.box2 {
   width: 350px;
   height: 600px;
   margin: 60px auto 0;
-  border-radius: 4px;
   border: 1px #ddd solid;
   line-height: 2.0;
 }
@@ -35,6 +34,10 @@ h2{
   height: 31px;
   background: linear-gradient(to bottom,#8a2be2,#8a2be2);
   border-radius: 3px;
-  border: 1px #8a2be2 solid;
+  border: 1px #9932cc solid;
   color:#ffffff;
+}
+
+.error{
+  color:#dc143c;
 }

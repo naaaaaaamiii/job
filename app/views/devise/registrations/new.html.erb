@@ -1,7 +1,9 @@
 <%= stylesheet_link_tag 'signup' %>
 <div class="box1">
+  <%= render "devise/shared/error_messages", resource: resource %>
+</div>
+<div class="box2">
   <div class="box-inner">
-    <%= render "devise/shared/error_messages", resource: resource %>
       <h2>Sign up</h2>
        <%= form_with model:@user, url: user_registration_path do |f| %>
          <div class="field">
@@ -20,11 +22,11 @@
             </strong>
             <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password", class:'form-control' %>
          </div>
-        
+
          <div class="field">
             <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"Password確認のためもう一度お願いします", class:'form-control' %>
          </div>
-        
+
          <div class="actions">
             <%= f.submit "Sign up" %>
          </div>
