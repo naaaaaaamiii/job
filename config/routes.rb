@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root to: "homes#top"
 
   get "search" => "searches#search" # 検索機能
-
+  get "about"  => "homes#about"
   resources :posts, only: [:index, :show, :edit, :create, :update, :destroy, :new] do
     resources :post_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
