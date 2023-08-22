@@ -11,10 +11,11 @@
          </div>
        </div>
        <div class="container">
-               <div class="hedder">
-                   <h3 class><i class="fa-regular fa-comment-dots"></i>閲覧数が多い経験</h3> 
-               </div>
-               <div class="index">
+          <div class="row">
+            <h3 class><i class="fa-regular fa-comment-dots"></i>閲覧数が多い経験</h3> 
+          </div>
+          <div class="row">
+             <div class="col">
                   <% @posts.each do |post| %>
                     <div class="card" style="width: 20rem;">
                       <div class="caed-body">
@@ -22,18 +23,20 @@
                         <h6 class="card-text"><%= post.body %></h6>
                       </div>
                       <div class="card-footer">
-                          <%= post.user.get_image(10,10) %>
                           <%= post.user.name %>
                       </div>
                     </div>
-                 <% end %> 
-               </div>
+                 <% end %>
+             </div> 
+          </div>
+       </div>
             <div class="row">
                 <h3 class>新しく投稿された経験</h3>
             </div>
             <div class="row">
                 <h3 class>いいねが多い経験</h3>
             </div>
+       
        
  <div class="container">
     <div class="row">
