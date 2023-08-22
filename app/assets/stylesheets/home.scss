@@ -1,3 +1,44 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-visual{
+  width: auto;
+  height: 450px;
+  background-color: #f5f5f5;
+  display: flex;
+}
+
+.main_right{
+  text-align: center;
+}
+
+p{
+  font-weight: 1000;
+  font-size: 50px;
+  margin: 50px;
+}
+
+.image{
+  width: 600px;
+  height: 400px;
+  margin: 30px;
+}
+
+.swiper {
+  width: 400px;
+  height: 300px;
+}
+
+:root {
+  --swiper-navigation-color: #ffffff;
+  --swiper-pagination-color: #ffffff;
+}
+
+
