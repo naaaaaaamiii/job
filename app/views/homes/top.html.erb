@@ -29,14 +29,44 @@
                  <% end %>
              </div> 
           </div>
-       </div>
-            <div class="row">
+           <div class="row m-4">
                 <h3 class>新しく投稿された経験</h3>
             </div>
-            <div class="row">
+             <div class="row">
+             <div class="col">
+                  <% @posts.each do |post| %>
+                    <div class="card mx-4" style="width: 20rem;">
+                      <div class="card-hedder">
+                        <%= post.user.name %>  
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title"><strong><%= post.title %></strong></h5>
+                        <h6 class="card-text"><%= post.body %></h6>
+                      </div>
+                    </div>
+                 <% end %>
+             </div> 
+          </div>
+            <div class="row m-4">
                 <h3 class>いいねが多い経験</h3>
             </div>
-       
+             <div class="row">
+             <div class="col">
+                  <% @posts.each do |post| %>
+                    <div class="card mx-4" style="width: 20rem;">
+                      <div class="card-hedder">
+                        <%= post.user.name %>  
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title"><strong><%= post.title %></strong></h5>
+                        <h6 class="card-text"><%= post.body %></h6>
+                      </div>
+                    </div>
+                 <% end %>
+             </div> 
+          </div>
+       </div>
+           
        
  <div class="container">
     <div class="row">

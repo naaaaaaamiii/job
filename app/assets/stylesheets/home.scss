@@ -8,10 +8,13 @@
   box-sizing: border-box;
 }
 
+.container{
+  background-color: #ffffff;
+}
+
 .main-visual{
   width: auto;
   height: 450px;
-  background-color: #f5f5f5;
 }
 
 .main-visual-top{
@@ -39,6 +42,10 @@ p{
 .col{
   display: flex;
   height: 350px;
+}
+
+.card{
+  background-color:#f0f8ff;
 }
 
 

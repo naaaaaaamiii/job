@@ -8,6 +8,7 @@
     
     <script src="https://kit.fontawesome.com/9e6c78803c.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
@@ -58,7 +59,9 @@
   </header>
   <body>
    <main>
-    <%= yield %>
+     <div class="whitesmoke">
+      <%= yield %>
+     </div>
    </main>
   </body>
   <footer>
