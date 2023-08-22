@@ -12,23 +12,28 @@
   width: auto;
   height: 450px;
   background-color: #f5f5f5;
-  display: flex;
 }
 
-.main_right{
+.main-visual-top{
+  display: flex;
   text-align: center;
 }
 
 p{
-  font-weight: 1000;
+  font-weight: 900;
   font-size: 50px;
-  margin: 50px;
+  margin: auto;
+  text-align: center;
 }
 
 .image{
-  width: 600px;
-  height: 400px;
-  margin: 30px;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+.main-visual-bottom{
+  text-align: center;
 }
 
 .swiper {

@@ -1,9 +1,11 @@
  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'home' %>
        <div class="main-visual">
-         <%= image_tag '22_01_001.png', class:'image' %><br>
-         <div class="main_right">
+         <div class="main-visual-top">
+           <%= image_tag '22_01_001.png', class:'image' %><br>
            <p>見たことのない景色<br>みにいこう</p>
+         </div>
+         <div class="main-visual-bottom">
            <%= link_to "about" %><br>
            <%= link_to "ログインする" %>
          </div>
