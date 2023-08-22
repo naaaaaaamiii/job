@@ -6,19 +6,34 @@
            <p>見たことのない景色<br>みにいこう</p>
          </div>
          <div class="main-visual-bottom">
-           <%= link_to "about" %><br>
+           <%= link_to "About" %><br>
            <%= link_to "ログインする" %>
          </div>
        </div>
+       <div class="container">
+            <div class="row">
+                <h3 class><i class="fa-regular fa-comment-dots"></i>閲覧数が多い経験</h3>
+                 <% @posts.each do |post| %>
+                    <div class="card" style="width: 30rem;">
+                      <div class="caed-body">
+                        <h5 class="card-title"><%= post.title %></h5>
+                        <h6 class="card-text"><%= post.body %></h6>
+                      </div>
+                      <div class="card^footer"></div>
+                    </div>
+                 <% end %>
+            </div>
+            <div class="row">
+                <h3 class>新しく投稿された経験</h3>
+            </div>
+            <div class="row">
+                <h3 class>いいねが多い経験</h3>
+            </div>
        
  <div class="container">
     <div class="row">
       <div class="col">
-        ここはトップページ
         <%= link_to "more event", events_path %>
-        
-        
-        <h1 class="jquery">Hello jQuery!</h1>
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -43,7 +58,8 @@
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
-        about
       </div>
     </div>
   </div>
+  
+  
