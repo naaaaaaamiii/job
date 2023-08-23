@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  
   scope :latest, -> {order(created_at: :desc)} #postを新着順に表示できるようにする
   scope :impressions_count, -> {order(impression: :desc)} #postをpvの多い順に表示できるようにする
 
@@ -11,6 +12,9 @@ class Post < ApplicationRecord
   has_many :post_tags,                   through: :post_tag_relationships
 
   is_impressionable counter_cache: true #PV数計測
+  
+  # バリデーション
+  validates :title, :body, :post_status,  presence: true
 
   def self.looks(search, word) #検索方法
       @post = Post.where("title LIKE?","%#{word}%")

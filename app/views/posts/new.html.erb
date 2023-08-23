@@ -2,6 +2,7 @@
    <div class="container">
      <h3 class="my-5">New Post</h3>
        <div class="row">
+         <%= render 'devise/shared/post-error', post: @post %>
          <div class="col-12">
            <%= form_with model:@post, url:posts_path do |f| %>
              <table class="table table-borderless">
