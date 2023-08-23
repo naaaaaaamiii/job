@@ -1,18 +1,18 @@
 <div class="container">
-  <h3 class >いいねした投稿</h3>
-  <div class="row">
-    <div class="col">
-      <table class="table">
-        <tbody>
-          <% @favorite_posts.each do |post| %>
-          <tr>
-            <td>
-              <%= link_to post.title, post_path(post) %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+  <div class="row m-5">
+    <h3 class >いいねした投稿</h3>
+      <div class="col">
+        <table class="table">
+          <tbody>
+            <% @favorite_posts.each do |post| %>
+            <tr>
+              <td>
+                <%= link_to post.title, post_path(post) %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
   </div>
 </div>
