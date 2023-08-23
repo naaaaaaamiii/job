@@ -15,7 +15,7 @@
             <h3 class>注目されている経験</h3>
           </div>
           <div class="row">
-             <div class="col">
+             <div class="col top-col">
                   <% @impressions.each do |post| %>
                     <div class="card mx-4" style="width: 20rem;">
                       <div class="card-hedder">
@@ -33,7 +33,7 @@
                 <h3 class>新しく投稿された経験</h3>
             </div>
              <div class="row ">
-               <div class="col">
+               <div class="col top-col">
                     <% @posts.each do |post| %>
                       <div class="card mx-4" style="width: 20rem;">
                         <div class="card-hedder">
@@ -51,7 +51,7 @@
                 <h3 class>いいねが多い経験</h3>
             </div>
              <div class="row">
-               <div class="col">
+               <div class="col top-col">
                     <% @favorites.each do |post| %>
                       <div class="card mx-4" style="width: 20rem;">
                         <div class="card-hedder">
@@ -66,12 +66,12 @@
                </div>
             </div>
        </div>
-       <div class="container">
+       <div class="container my-4">
            <div class="row m-4">
                <h3 class>Event一覧</h3>
             </div>
             <div class="row">
-               <div class="col">
+               <div class="col top-col">
                    <% @events.each do |event| %>
                        <div class="card mx-4" style="width: 20rem;">
                         <div class="card-body">
