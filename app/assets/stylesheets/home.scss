@@ -40,6 +40,14 @@ p{
   text-align: center;
 }
 
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+
 .btn,
 a.btn,
 button.btn {
@@ -68,7 +76,7 @@ button.btn {
   padding: 1.5rem 6rem;
   color: #fff;
   border-radius: 0;
-  background: #000;
+  background: #4169e1;
 }
 
 .btn-flat span {
@@ -78,20 +86,20 @@ button.btn {
 .btn-flat:before {
   position: absolute;
   top: 0;
-  left: 30px;
+  left: 0;
   width: 150%;
   height: 500%;
-  content: '';
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
-  -webkit-transform: translateX(-98%) translateY(-70%) rotate(135deg);
-  transform: translateX(-98%) translateY(-70%) rotate(135deg);
-  background: #fff100;
+  content: "";
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  background: #00008b;
 }
 
 .btn-flat:hover:before {
-  -webkit-transform: translateX(-9%) translateY(-25%) rotate(135deg);
-  transform: translateX(-9%) translateY(-25%) rotate(135deg);
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
 .col{
