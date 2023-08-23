@@ -40,15 +40,12 @@ p{
   text-align: center;
 }
 
-.about-btn {
-  border-style: none;
-  height: 30px;
-  background: linear-gradient(to bottom,#0000cd,#0000cd);
-  border-radius: 3px;
-  border: 1px #0000cd solid;
-  font-color: #ffffff;
+.btn{
+  color: #ffffff;
+  background-color: #0000cd;
+  width: 300px;
+  height: 70px;
 }
-
 .col{
   display: flex;
   height: 350px;
