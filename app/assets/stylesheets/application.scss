@@ -19,6 +19,18 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none; 
+}
+
+ body{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100vh
+}
+
+
 .whitesmoke{
   background-color: #f5f5f5;
 }
@@ -26,6 +38,7 @@
 footer{
   background-color: #191970;
   height: 300px;
+  width: 100%;
 }
 
 .footer-item{
