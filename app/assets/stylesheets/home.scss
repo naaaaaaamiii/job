@@ -3,13 +3,8 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-.whitesmoke{
-  background-color: #f5f5f5;
-}
-
 .container{
   background-color: #ffffff;
-  border-color: #000000;
 }
 
 .main-visual{
@@ -101,7 +96,7 @@ a.btn-flat
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
-.col{
+.home.col{
   display: flex;
   height: 350px;
 }
