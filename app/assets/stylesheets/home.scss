@@ -3,10 +3,6 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-.container{
-  background-color: #ffffff;
-}
-
 .main-visual{
   width: auto;
   height: 450px;
@@ -17,7 +13,7 @@
   text-align: center;
 }
 
-p{
+ p{
   font-weight: 900;
   font-size: 50px;
   margin: auto;
@@ -96,7 +92,7 @@ a.btn-flat
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
-.home.col{
+.col{
   display: flex;
   height: 350px;
 }
