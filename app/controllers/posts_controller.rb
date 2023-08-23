@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     post_tags = params[:post][:name].split(',')
-    if  @post.save!
+    if  @post.save
         @post.save_post_tags(post_tags)
         redirect_to posts_path
     else
