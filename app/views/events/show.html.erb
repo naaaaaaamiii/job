@@ -12,28 +12,28 @@
            <td><p id="title"><%= @event.event_name %></p></td>
            </tr>
            <tr>
-             <td><p class="dai">1.詳細</p></td>
+             <td><p class="item">1.詳細</p></td>
            </tr>
            <tr>
              <td><%= @event.event_introduction %></td>
            </tr>
            <tr>
-             <td><p class="dai">2. 開催形態</p></td>
+             <td><p class="item">2. 開催形態</p></td>
            </tr>
            <tr>
              <td><%= @event.event_status %></td>
            </tr>
            <tr>
-             <td><p class="dai">3. 開催日時</p></td>
+             <td><p class="item">3. 開催日時</p></td>
            </tr>
            <tr>
              <td><%= @event.date %></td>
            </tr>
            <tr>
-             <td><p class="dai">4. 開催場所</p></td>
+             <td><p class="item">4. 開催場所</p></td>
            </tr>
            <tr>
-             <td><p class="dai">5. 作成者</p></td>
+             <td><p class="item">5. 作成者</p></td>
            </tr>
            <tr>
              <td><%= link_to @event.creator.name, user_path(@user)%></td>
