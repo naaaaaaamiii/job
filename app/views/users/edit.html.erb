@@ -1,9 +1,10 @@
-<div class="container">
-  <div class="row justify-content-center">
+<div class="container my-5">
+  <div class="row justify-content-center ">
     <h3 class="my-3">Profile Setting</h3>
   </div>
   <div class="row">
     <div class="col">
+      <%= render 'devise/shared/user-error', user:@user %>
       <%=form_with model: @user, method: :patch do |f|%>
         <table class="table">
           <tr>

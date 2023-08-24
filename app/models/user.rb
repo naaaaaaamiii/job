@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :followeds, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy #フォローされた
   has_many :attendees                          #イベント
   has_many :events,        through: :attendees #イベント
+  
+  # バリデーション
+  validates :name, presence: true
  
  
   #フォロー・フォロワーの一覧を取得

@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new(user_params)
-  end
-  
+ 
   def index
    @user = current_user
    @posts = @user.posts
@@ -19,8 +16,13 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to request.referer
+     if @user.update(user_params)
+       flash[:notice] = "Success🎉"
+       redirect_to request.referer
+     else
+       flash.now[:alert] = "Error🫠"
+       render 'edit'
+     end
   end
   
   def favorites #いいね一覧表示のための
