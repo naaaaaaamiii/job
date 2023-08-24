@@ -17,10 +17,6 @@ $(document).on('turbolinks:load', function() {
 });
 
 // ハンバーガーメニュー
-$(function() {
-  $('.menu-trigger').on('click', function(event) {
-    $(this).toggleClass('active');
-    $('#sp-menu').fadeToggle();
-  });
+$('.nav_toggle').on('click', function () {
+  $('.nav_toggle, .nav').toggleClass('show');
 });
-
