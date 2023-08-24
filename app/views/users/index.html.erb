@@ -21,7 +21,7 @@
                           <% end %>
                         </th>
                         <th>
-                          <%= link_to post_path(post), method: :delete, class:"btn btn-outline-secondary rounded-circle" do %>
+                          <%= link_to post_path(post), method: :delete, class:"btn btn-outline-secondary rounded-circle", data: {confirm: "<確認>削除しますか？"} do %>
                              <i class="fa-solid fa-trash-can"></i>
                           <% end %>
                         </th>

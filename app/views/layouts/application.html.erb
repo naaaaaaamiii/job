@@ -18,6 +18,7 @@
             <a class="navbar-brand " href="/"><span>Job</span></a>
              <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
+                 <%= render 'devise/shared/humberger' %>
                   <li class="nav-item mr-3">
                     <%= link_to "Mypage", user_path(current_user) %><!--マイページ-->
                   </li>
@@ -63,7 +64,7 @@
           <ul class="footer-item">
              <%= link_to destroy_user_session_path, method: :delete do %>
                     <i class="fa-solid fa-right-from-bracket"></i>ログアウトする方はこちら
-            　<% end %>　
+            　<% end %>
           </ul>
           <p class="footer-item">© NANIWOSUREBAIINOKA TADASIISENNTAKUTOHA</p>
       </footer>

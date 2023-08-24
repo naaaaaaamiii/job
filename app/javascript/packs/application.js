@@ -8,12 +8,13 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "script.js"
-import Swiper from 'swiper/swiper-bundle.js'; 
+import Swiper from 'swiper/swiper-bundle.js';
 import 'swiper/swiper-bundle.css';
 import "jquery";
 import "popper.js";
 import "bootstrap";
-import "../stylesheets/application"; 
+import "../stylesheets/application";
+import "script.js"
 
 require('./preview')
 
