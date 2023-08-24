@@ -20,12 +20,15 @@
 }
 
 // ハンバーガーメニュー 開く前
+  // ボタンの三本線の位置
 .nav_toggle {
   display: block;
   position: relative;
   width: 1.75rem;
   height: 1.5rem;
 }
+
+// 
 .nav_toggle i {
   display: block;
   width: 100%;
@@ -46,7 +49,7 @@
   bottom: 0;
 }
 
-// クリック後
+// クリック後のハンバーガー
 .nav_toggle.show i:nth-child(1) {
   transform: translateY(10px) rotate(-45deg);
 }
@@ -73,8 +76,21 @@
 .nav.show {
   opacity: 1;
   visibility: visible;
+  background-color: #999;
 }
 
+.nav a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav_menu_li{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+// ここまで
 
 
  body{
