@@ -7,9 +7,11 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.creator = current_user
-    if @event.save!
-     redirect_to event_path(@event)
+    if @event.save
+       flash[:notice] = "Success🎉"
+       redirect_to event_path(@event)
     else
+      flash.now[:alert] = "Error🫠"
       render "new"
     end
   end
@@ -22,8 +24,10 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.creator = current_user
     if @event.update(event_params)
+      flash[:notice] = "Success🎉"
       redirect_to event_path(@event)
     else
+      flash.now[:alert] = "Error🫠"
       render "edit"
     end
   end

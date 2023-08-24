@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container my-5">
   <h3 class>Edit Event</h3>
    <div class="row">
      <div class="col-6">
@@ -7,6 +7,7 @@
         </div>
      </div>
      <div class="col-6">
+        <%= render 'devise/shared/event-error', event:@event %>
         <%= form_with model:@event, url: event_path(@event) do |f| %>
           <table class="table table-borderless">
             <tbody>

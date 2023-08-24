@@ -1,5 +1,4 @@
-<%= stylesheet_link_tag 'events' %>
-<div class="container">
+<div class="container my-5">
   <div class="row justify-content-center">
     <div class="col">
       <%= image_tag @event.get_event_image(700,700) %>
@@ -48,7 +47,7 @@
           <%= link_to edit_event_path(@event), class:"btn btn-success" do %>
                編集
           <% end %>
-          <%= link_to event_path(@event), class:"btn btn-danger", method: :delete do %>
+          <%= link_to event_path(@event), class:"btn btn-danger", method: :delete, data: {confirm: "<確認>削除しますか？"} do %>
                削除
           <% end %>
         <% end %>

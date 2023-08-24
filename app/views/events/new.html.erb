@@ -1,5 +1,5 @@
-<div class="container">
-  <h3 class>New Event</h3>
+<div class="container my-5">
+  <h3 class="my-3">New Event</h3>
    <div class="row">
      <div class="col-6">
         <div id="event_images" style="display: none;">
@@ -7,12 +7,12 @@
         </div>
      </div>
      <div class="col-6">
+       <%= render 'devise/shared/event-error', event:@event %>
         <%= form_with model:@event, url:events_path do |f| %>
           <table class="table table-borderless">
             <tbody>
               <tr><th>
                 <%= f.datetime_field :date %>
-                <%= f.submit "申請する", class: "btn btn-success" %>
               </th></tr>
               <tr><th>
                 <label class>
@@ -32,6 +32,7 @@
               <tr><td><%= f.text_area :url, placeholder:"オンライン開催URL", class:'form-control' %></td></tr>
               <tr><td><%= f.text_field :postal_code, placeholder:"〒 郵便番号", class:'form-control' %></td></tr>
               <tr><td><%= f.text_area :adress,rows:"4", placeholder:"住所", class:'form-control'%></td> </tr>
+              <tr><td><%= f.submit "作成する", class: "btn btn-success" %></td></tr>
             </tbody>
           </table>
         <% end %>
