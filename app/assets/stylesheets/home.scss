@@ -92,6 +92,13 @@ a.btn-flat
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
+.top-row{
+  overflow: auto;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
 
 .card{
   background-color:#f0f8ff;
