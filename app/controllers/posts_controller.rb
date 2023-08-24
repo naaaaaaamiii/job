@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     if  @post.save
         @post.save_post_tags(post_tags)
         flash[:notice] = "Success🎉"
-        redirect_to user_path(current_user)
+        redirect_to users_path
     else
       　flash.now[:alert] = "Error🫠"
         render :new  #保存に失敗したら元のページに戻る
@@ -55,7 +55,8 @@ class PostsController < ApplicationController
   def destroy #記事の削除
      post = Post.find(params[:id])
      post.destroy
-     redirect_to post_path(post.user)
+     flash[:notice] = "Success🎉"
+     redirect_to users_path
   end
 
 
