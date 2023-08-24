@@ -2,12 +2,12 @@ class UsersController < ApplicationController
  
   def index
    @user = current_user
-   @posts = @user.posts
+   @posts = @user.posts.page(params[:page]).reverse_order
   end
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.published.page(params[:page]).reverse_order #公開記事のみ表示する
+    @posts = @user.posts.published.page(params[:page]).reverse_order #公開記事のみ表示する(新しい順)
   end
 
   def edit

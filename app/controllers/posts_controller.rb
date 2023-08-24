@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.published.page(params[:page]).reverse_order #公開記事のみ表示
     @rank_posts = Post.order(impressions_count: 'DESC') #pv数の多い順に並び変える
   end
 
