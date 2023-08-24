@@ -92,15 +92,18 @@ a.btn-flat
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
-.top-col{
-  display: flex;
-  height: 350px;
-}
 
 .card{
   background-color:#f0f8ff;
   width: 200px;
-  
+  height: 300px;
+}
+
+.card-text{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7; /* 任意の行数を指定 */
 }
 
 

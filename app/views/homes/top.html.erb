@@ -14,10 +14,10 @@
           <div class="row m-4">
             <h3 class>注目されている経験</h3>
           </div>
-          <div class="row">
-             <div class="col top-col">
-                  <% @impressions.each do |post| %>
-                    <div class="card mx-4">
+          <div class="row top-row flex-nowrap">
+              <% @impressions.each do |post| %>
+                <div class="col top-col justify-content-around ">
+                    <div class="card" style="width: 20rem;">
                       <div class="card-hedder">
                         <%= post.user.name %>
                       </div>
@@ -26,8 +26,8 @@
                         <h6 class="card-text"><%= post.body %></h6>
                       </div>
                     </div>
-                 <% end %>
-             </div>
+                </div>
+             <% end %>
           </div>
            <div class="row m-4">
                 <h3 class>新しく投稿された経験</h3>
