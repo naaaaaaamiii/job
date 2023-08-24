@@ -51,6 +51,14 @@ footer{
   border-color: #e6e6fa;
 }
 
+.error{
+  color: #4169e1;
+  background-color: #f8f8ff;
+  border: solid;
+  border-color: #4169e1;
+  font-size: 18px;
+}
+
 // テストデプロイ
 body {
   background-image: image-url("hoge.jpg");} 

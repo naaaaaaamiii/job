@@ -14,8 +14,9 @@ class Post < ApplicationRecord
   is_impressionable counter_cache: true #PV数計測
   
   # バリデーション
-  validates :title, :body, :post_status,  presence: true
-
+  validates :title, :body, :post_status, presence: true
+  
+  
   def self.looks(search, word) #検索方法
       @post = Post.where("title LIKE?","%#{word}%")
   end

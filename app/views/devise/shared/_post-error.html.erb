@@ -1,8 +1,9 @@
-<% if post.errors.any? %>
-  <%= post.errors.count %>件のエラーが発生しました
-  <ul>
-    <% post.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+<div class="error" >
+    <% if post.errors.any? %>
+      <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <ul><%= message %></ul>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
+</div>

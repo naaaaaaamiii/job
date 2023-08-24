@@ -10,8 +10,10 @@ class PostsController < ApplicationController
     post_tags = params[:post][:name].split(',')
     if  @post.save
         @post.save_post_tags(post_tags)
-        redirect_to posts_path
+        flash[:notice] = "Success🎉"
+        redirect_to user_path(current_user)
     else
+      　flash.now[:alert] = "Error🫠"
         render :new  #保存に失敗したら元のページに戻る
     end
   end
@@ -40,15 +42,20 @@ class PostsController < ApplicationController
   def update
      @post = Post.find(params[:id])
      tag_list = params[:post][:name].split(',')
-     @post.update(post_params)
-     @post.save_post_tags(tag_list)
-     redirect_to post_path(@post)
+     if@post.update(post_params)
+       @post.save_post_tags(tag_list)
+       flash[:notice] = "Success🎉"
+       redirect_to post_path(@post)
+     else
+       flash.now[:alert] = "Error🫠"
+      　render :edit
+     end
   end
 
   def destroy #記事の削除
      post = Post.find(params[:id])
      post.destroy
-     redirect_to request.referer
+     redirect_to post_path(post.user)
   end
 
 

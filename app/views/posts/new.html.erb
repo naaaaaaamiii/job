@@ -1,9 +1,8 @@
-<%= stylesheet_link_tag 'posts' %>
    <div class="container">
      <h3 class="my-5">New Post</h3>
        <div class="row">
-         <%= render 'devise/shared/post-error', post: @post %>
          <div class="col-12">
+           <%= render 'devise/shared/post-error', post: @post %>
            <%= form_with model:@post, url:posts_path do |f| %>
              <table class="table table-borderless">
                 <tbody>
@@ -23,7 +22,7 @@
                       <td> <%= f.select :post_status, Post.post_statuses.keys.map{ |k| [t("enums.post.post_status.#{k}"),k]}, {}, {class: "custom-select w-25"} %></td>
                   </tr>
                   <tr>
-                      <td> <%= f.submit "更新する", class: "btn btn-success" %>
+                      <td> <%= f.submit "保存する", class: "btn btn-success" %>
                   </td>
                   </tr>
                 </tbody>
