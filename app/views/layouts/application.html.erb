@@ -13,9 +13,9 @@
   </head>
   <body>
       <header>
+        <%= render 'devise/shared/humberger' %>
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
-            <%= render 'devise/shared/humberger' %>
             <a class="navbar-brand " href="/"><span>Job</span></a>
              <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
