@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   sessions: "admin/sessions"
 }
 
+  # ゲストログイン
+  devise_scope :user do
+    post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
+  end
+
   # ユーザー
   devise_for :users
   root to: "homes#top"

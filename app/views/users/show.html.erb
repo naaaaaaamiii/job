@@ -18,9 +18,11 @@
     </div>
     <div class="col-2">
       <!--ユーザー編集ボタン-->
-      <% if current_user == @user %>
-             <%= link_to "Edit plofile", edit_user_path(current_user.id),class:"btn btn-outline-secondary btn-block" %>
-       <% end %>
+      <% if @user.email != "guest@example.com" %>
+         <% if current_user == @user %>
+                <%= link_to "Edit plofile", edit_user_path(current_user.id),class:"btn btn-outline-secondary btn-block" %>
+          <% end %>
+      <% end %>
        <div id="follow_<%= @user.id %>">
              <%= render 'relationships/follow_btn', user: @user %><!--フォローボタン-->
        </div>

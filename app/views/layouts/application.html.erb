@@ -40,6 +40,9 @@
                     <% end %>
                   </li>
               <% else %>
+                  <div class="row">
+                    <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn btn-secondary btn-sm btn-block mb-3 sign_in", method: :post %>
+                  </div>
                   <li class="nav-item mr-3">
                     <%= link_to "新規登録", new_user_registration_path %>
                   </li>
