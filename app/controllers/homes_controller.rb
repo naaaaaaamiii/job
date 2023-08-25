@@ -8,6 +8,7 @@ class HomesController < ApplicationController
     @impressions = Post.impressions_count.limit(6)
     
     @events = Event.all
+    
   end
 
 end

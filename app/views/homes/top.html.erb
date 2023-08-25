@@ -20,6 +20,7 @@
                     <div class="card" style="width: 20rem;">
                       <a href="/posts/<%= post.id %>" class="text-dark">
                           <div class="card-hedder">
+                            <%= image_tag post.user.get_image(30,30) %>
                             <%= post.user.name %>
                           </div>
                           <div class="card-body">
@@ -89,8 +90,10 @@
                     </div>
                  <% end %>
               </div>
+              <div class="row event-row">
+                <h5 claas><i class="fa-solid fa-paper-plane"></i><%= link_to "More event", events_path, class:"link" %></h5>
+              </div>
              </div>
-           <%= link_to "More event", events_path %>
        </div>
 
 
