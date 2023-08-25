@@ -56,6 +56,7 @@ class User < ApplicationRecord
     end
   end
   
+  # ゲストユーザーログイン
   def guest_user?
     email == GUEST_USER_EMAIL
   end
