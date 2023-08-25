@@ -18,13 +18,15 @@
               <% @impressions.each do |post| %>
                 <div class="col top-col justify-content-around">
                     <div class="card" style="width: 20rem;">
-                      <div class="card-hedder">
-                        <%= post.user.name %>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title"><strong><%= post.title %></strong></h5>
-                        <h6 class="card-text"><%= post.body %></h6>
-                      </div>
+                      <a href="/posts/<%= post.id %>" class="text-dark">
+                          <div class="card-hedder">
+                            <%= post.user.name %>
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title"><strong><%= post.title %></strong></h5>
+                            <h6 class="card-text"><%= post.body %></h6>
+                          </div>
+                      </a>
                     </div>
                 </div>
              <% end %>
@@ -36,13 +38,15 @@
                   <% @posts.each do |post| %>
                     <div class="col top-col justify-content-around ">
                         <div class="card" style="width: 20rem;">
-                          <div class="card-hedder">
-                            <%= post.user.name %>
-                          </div>
-                          <div class="card-body">
-                            <h5 class="card-title"><strong><%= post.title %></strong></h5>
-                            <h6 class="card-text"><%= post.body %></h6>
-                          </div>
+                          <a href="/posts/<%= post.id %>" class="text-dark">
+                            <div class="card-hedder">
+                              <%= post.user.name %>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title"><strong><%= post.title %></strong></h5>
+                              <h6 class="card-text"><%= post.body %></h6>
+                            </div>
+                          </a>
                         </div>
                     </div>
                  <% end %>
@@ -54,13 +58,15 @@
                   <% @favorites.each do |post| %>
                     <div class="col top-col justify-content-around ">
                         <div class="card" style="width: 20rem;">
-                          <div class="card-hedder">
-                            <%= post.user.name %>
-                          </div>
-                          <div class="card-body">
-                            <h5 class="card-title"><strong><%= post.title %></strong></h5>
-                            <h6 class="card-text"><%= post.body %></h6>
-                          </div>
+                          <a href="/posts/<%= post.id %>" class="text-dark">
+                            <div class="card-hedder">
+                              <%= post.user.name %>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title"><strong><%= post.title %></strong></h5>
+                              <h6 class="card-text"><%= post.body %></h6>
+                            </div>
+                          </a>
                         </div>
                     </div>
                  <% end %>
@@ -74,10 +80,12 @@
               <div class="row top-row flex-nowrap m-4">
                   <% @events.each do |event| %>
                     <div class="col top-col justify-content-around ">
+                      <a href="/events/<%= event.id %>" class="text-dark">
                         <div class="card" style="width: 20rem;">
-                          <h5 class="card-title"><strong><%= event.event_name %></strong></h5>
-                          <h6 class="card-text"><%= event.event_introduction %></h6>
+                            <h5 class="card-title"><strong><%= event.event_name %></strong></h5>
+                            <h6 class="card-text"><%= event.event_introduction %></h6>
                         </div>
+                      </a>
                     </div>
                  <% end %>
               </div>
