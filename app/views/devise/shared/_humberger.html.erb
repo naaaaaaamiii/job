@@ -10,5 +10,6 @@
     <li class="nav_menu_li"><i class="fa-solid fa-feather"></i><%= link_to "Post Detail",users_path %></li>
     <li class="nav_menu_li"><i class="fa-solid fa-right-from-bracket"></i><%= link_to "ログイン", new_user_session_path %></li>
     <li class="nav_menu_li"><i class="fa-solid fa-hand"></i><a href="#">退会</a></li>
+    <li class="nav_menu_li"> <i class="fa-solid fa-heart"></i><%= link_to "いいね一覧", favorites_user_path(current_user) %></li>
   </ul>
 </nav>
