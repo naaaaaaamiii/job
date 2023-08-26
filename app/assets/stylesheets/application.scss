@@ -104,7 +104,12 @@
  header{
    overflow: auto
  }
-
+ 
+ .logo {
+   height: 50px;
+   width: auto;
+ }
+ 
  body{
   display: grid;
   grid-template-rows: auto 1fr auto;

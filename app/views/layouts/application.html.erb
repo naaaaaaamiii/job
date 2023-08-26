@@ -13,10 +13,9 @@
   </head>
   <body>
       <header>
-        <div class="humberger m-5">
-          <%= render 'devise/shared/humberger' %>
-              <nav class="navbar navbar-expand-lg ">
-                <a class="navbar-brand " href="/"><span>Job</span></a>
+         <nav class="navbar navbar-expand-lg m-5">
+             <%= render 'devise/shared/humberger' %>
+               <a class="navbar-brand mx-auto " href="/"><%= image_tag 'JOB-logos.jpeg', class:"logo mx-auto" %></a>
                  <ul class="navbar-nav ml-auto">
                   <% if user_signed_in? %>
                       <li class="nav-item mr-3">
@@ -24,10 +23,10 @@
                             <i class="fa-solid fa-magnifying-glass"></i><!--検索-->
                         <% end %>
                       </li>
-                  <% else %>
-                      <div class="row">
-                        <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn btn-secondary btn-sm btn-block mb-3", method: :post %>
-                      </div>
+                   <% else %>
+                      <li class="nav-item mr-3">
+                        <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn btn-block mb-3", method: :post %>
+                      </li>
                       <li class="nav-item mr-3">
                         <%= link_to "新規登録", new_user_registration_path %>
                       </li>
