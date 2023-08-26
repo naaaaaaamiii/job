@@ -5,19 +5,42 @@
 
 .main-visual{
   width: auto;
-  height: 450px;
-}
-
-.main-visual-top{
-  display: flex;
+  height: 700px;
   text-align: center;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900');
 
 .main-visual-text{
-  font-weight: 900;
-  font-size: 50px;
-  margin: auto;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25vh;
+  letter-spacing: 1vw;
+  position: absolute;
+  top: 15vh;
   text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background:url('https://i.pinimg.com/originals/9f/9c/c5/9f9cc5217bb04790e5fb852b665ca2ff.jpg');
+  background:url('https://thumbs.dreamstime.com/b/tropical-flower-pattern-seamless-flowers-blossom-flowers-nature-background-vector-illustration-61142748.jpg');
+  background-size: auto 200%;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 16s linear infinite;
+  &:nth-child(2) {
+    top: 50vh;
+  }
+  @keyframes shine {
+    from {
+      background-position: center 0;
+    }
+    to {
+      background-position: center 200%;
+    }
+  }
 }
 
 .image{
@@ -26,9 +49,6 @@
   margin: auto;
 }
 
-.main-visual-bottom{
-  text-align: center;
-}
 
 *,
 *:before,
@@ -36,8 +56,6 @@
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
-
-
 
 a.btn-flat
  {
@@ -66,7 +84,7 @@ a.btn-flat
   padding: 1.5rem 6rem;
   color: #fff;
   border-radius: 0;
-  background: #4169e1;
+  background: #87ceeb;
 }
 
 .btn-flat span {
@@ -84,7 +102,7 @@ a.btn-flat
   transition: all 0.5s ease-in-out;
   -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
   transform: translateX(-98%) translateY(-25%) rotate(45deg);
-  background: #00008b;
+  background: #00ffff;
 }
 
 .btn-flat:hover:before {
