@@ -47,8 +47,13 @@ class UsersController < ApplicationController
   end
   
   def myevents
-    @user = current_user
-    @myevents = @user.events
+    if params[:event_type] == "created_events"
+      @myevents = current_user.events.where(creator_id: current_user.id)
+    elsif params[:event_type] == "attended_events"
+      @myevents = Event.joins(:attendees).where(attendees: { user_id: current_user.id }).where.not(creator_id: current_user.id).page(params[:page]).per(8)
+    elsif params[:event_type] == "past_attended_events"
+      @myevents = Event.joins(:attendees).where(attendees: { user_id: current_user.id }).where("date < ?", Time.now).where.not(creator_id: current_user.id).page(params[:page]).per(8)
+    end
   end
  
   private
@@ -57,7 +62,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :introduction, :image, :post_status)
    end
    
-    def ensure_guest_user
+    def ensure_guest_user #ゲストユーザーログイン
        @user = User.find(params[:id])
         if @user.guest_user?
           redirect_to user_path(current_user) , notice: "ゲストユーザーはプロフィール編集画面へ遷移できません。"

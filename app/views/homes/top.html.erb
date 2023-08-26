@@ -17,7 +17,7 @@
                     <div class="card" style="width: 20rem;">
                       <a href="/posts/<%= post.id %>" class="text-dark">
                           <div class="card-hedder">
-                            <%= image_tag post.user.get_image(30,30) %>
+                            <%= image_tag post.user.get_image(40,40) %>
                             <%= post.user.name %>
                           </div>
                           <div class="card-body">
@@ -38,6 +38,7 @@
                         <div class="card" style="width: 20rem;">
                           <a href="/posts/<%= post.id %>" class="text-dark">
                             <div class="card-hedder">
+                              <%= image_tag post.user.get_image(40,40) %>
                               <%= post.user.name %>
                             </div>
                             <div class="card-body">
@@ -58,6 +59,7 @@
                         <div class="card" style="width: 20rem;">
                           <a href="/posts/<%= post.id %>" class="text-dark">
                             <div class="card-hedder">
+                              <%= image_tag post.user.get_image(40,40) %>
                               <%= post.user.name %>
                             </div>
                             <div class="card-body">
@@ -80,6 +82,7 @@
                     <div class="col top-col justify-content-around ">
                       <div class="card" style="width: 20rem;">
                         <a href="/events/<%= event.id %>" class="text-dark">
+                          <%= image_tag event.get_event_image(320,400) %>
                             <h5 class="card-title"><strong><%= event.event_name %></strong></h5>
                             <h6 class="card-text"><%= event.event_introduction %></h6>
                          </a>
