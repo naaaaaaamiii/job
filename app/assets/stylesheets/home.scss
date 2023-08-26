@@ -3,9 +3,13 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-.main-visual{
+.main-visual-top{
   width: auto;
   height: 700px;
+  text-align: center;
+}
+
+.main-visual{
   text-align: center;
 }
 
@@ -17,7 +21,6 @@
   font-size: 23vh;
   letter-spacing: 1vw;
   position: absolute;
-  top: 15vh;
   text-align: center;
   left: 50%;
   transform: translateX(-50%);
