@@ -139,7 +139,7 @@ a.btn-flat
 
 .card:hover{
   cursor: pointer;
-  background: #e0ffff;
+  background: #87cefa;
 }
 
 .card-text{
@@ -153,6 +153,13 @@ a.btn-flat
   -webkit-line-clamp: 2;
 }
 
+.join-top{
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(
+                 #87cefa,#00bfff
+  );
+}
 
 .swiper {
   width: 400px;
