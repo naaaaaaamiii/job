@@ -60,6 +60,7 @@
         </nav>
       </header>
        <main>
+          <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
           <% flash.each do |message_type, message| %>
               <div class="flash-message <%= message_type %>"><%= message %></div>
           <% end %>
