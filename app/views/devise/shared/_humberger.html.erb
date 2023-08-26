@@ -6,9 +6,9 @@
 
 <nav class="nav">
   <ul class="nav_menu_ul">
-    <li class="nav_menu_li"><i class="fa-solid fa-user"></i><a href="#">My Page</a></li>
-    <li class="nav_menu_li"><i class="fa-solid fa-feather"></i><a href="#">Post Detail</a></li>
-    <li class="nav_menu_li"><i class="fa-solid fa-right-from-bracket"></i><a href="#">ログアウト</a></li>
+    <li class="nav_menu_li"><i class="fa-solid fa-user"></i><%= link_to "Mypage", user_path(current_user) %></li>
+    <li class="nav_menu_li"><i class="fa-solid fa-feather"></i><%= link_to "Post Detail",users_path %></li>
+    <li class="nav_menu_li"><i class="fa-solid fa-right-from-bracket"></i><%= link_to "ログイン", new_user_session_path %></li>
     <li class="nav_menu_li"><i class="fa-solid fa-hand"></i><a href="#">退会</a></li>
   </ul>
 </nav>
