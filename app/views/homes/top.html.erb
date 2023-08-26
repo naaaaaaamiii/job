@@ -16,7 +16,7 @@
                 <div class="col top-col justify-content-around">
                     <div class="card" style="width: 20rem;">
                       <a href="/posts/<%= post.id %>" class="text-dark">
-                          <div class="card-hedder">
+                          <div class="card-hedder m-1">
                             <%= image_tag post.user.get_image(40,40) %>
                             <%= post.user.name %>
                           </div>
@@ -37,7 +37,7 @@
                     <div class="col top-col justify-content-around ">
                         <div class="card" style="width: 20rem;">
                           <a href="/posts/<%= post.id %>" class="text-dark">
-                            <div class="card-hedder">
+                            <div class="card-hedder m-1">
                               <%= image_tag post.user.get_image(40,40) %>
                               <%= post.user.name %>
                             </div>
@@ -58,7 +58,7 @@
                     <div class="col top-col justify-content-around ">
                         <div class="card" style="width: 20rem;">
                           <a href="/posts/<%= post.id %>" class="text-dark">
-                            <div class="card-hedder">
+                            <div class="card-hedder m-1">
                               <%= image_tag post.user.get_image(40,40) %>
                               <%= post.user.name %>
                             </div>
@@ -73,6 +73,7 @@
               </div>
             </div>
        </div>
+       
        <div class="container my-5">
            <div class="row m-4">
                <h3 class><i class="fa-solid fa-seedling", style="color:#008080;"></i>Event一覧</h3>
@@ -84,13 +85,13 @@
                         <a href="/events/<%= event.id %>" class="text-dark">
                           <%= image_tag event.get_event_image(320,400) %>
                             <h5 class="card-title"><strong><%= event.event_name %></strong></h5>
-                            <h6 class="card-text"><%= event.event_introduction %></h6>
+                            <h6 class="card-introduction"><%= event.event_introduction %></h6>
                          </a>
                       </div>
                     </div>
                  <% end %>
               </div>
-              <div class="row event-row">
+              <div class="row justify-content-end">
                 <h5 claas><i class="fa-solid fa-paper-plane"></i><%= link_to "More event", events_path, class:"link" %></h5>
               </div>
              </div>
