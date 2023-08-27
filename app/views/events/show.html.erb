@@ -70,10 +70,17 @@
     <!--参加者-->
     <% if current_user == @event.creator %>
         <% @event.users.each do |user| %>
-        　　   <li style="list-style: none;">
-        　　     <%= user.name %>
-        　　     <%= user.email %>
-        　　   </li>
+           <table class="table">
+               <thead>
+                   <th>Member list</th>
+               </thead>
+               <tbody>
+                   <tr>
+                     <td><%= user.name %></td>
+                     <td><%= user.email %></td>
+                   </tr>
+               </tbody>
+           </table>
         <% end %>
     <% end %>
   </div>
