@@ -1,6 +1,6 @@
 <div class="container my-5">
   <div class="row justify-content-center">
-    <div class="col">
+    <div class="col event-image">
       <%= image_tag @event.get_event_image(700,700) %>
     </div>
   </div>
@@ -26,7 +26,7 @@
              <td><p class="item">3. 開催日時</p></td>
            </tr>
            <tr>
-             <td><%= @event.date %></td>
+             <td><%= @event.date.strftime('%Y/%m/%d') %></td>
            </tr>
            <tr>
              <td><p class="item">4. 開催場所</p></td>
