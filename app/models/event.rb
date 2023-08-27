@@ -6,13 +6,14 @@ class Event < ApplicationRecord
 
   enum event_status: { offline: 0, online: 1 } #イベント開催オフラインかオンラインか
   
+  
+  
   # バリデーション
   validates :event_name, :date, :event_introduction, presence: true
 
   def includesUSesr?(user) #ユーザーがイベントの参加者かどうか
     attendees.exists?(attendee_id: user_id)
   end
-
 
 
   validate :date

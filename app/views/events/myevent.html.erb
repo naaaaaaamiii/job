@@ -1,14 +1,11 @@
 <div class="container my-5">
-  <div>
-    <%= flash[:notice] %>
-  </div>
   <h3 class="mb-4">My Event</h3>
   <div class="btn-group mx-2 mb-4">
-    <%= link_to "自分が作成したイベント", myevents_user_path(event_type: "created_events"), class: "btn btn-primary" %>
+    <%= link_to "自分が作成したイベント", myevent_event_path(event_type: "created_events"), class: "btn btn-primary" %>
     &nbsp;&nbsp;
-    <%= link_to "参加予定イベント", myevents_user_path(event_type: "attended_events"), class: "btn btn-primary" %>
+    <%= link_to "参加予定イベント", myevent_event_path(event_type: "attended_events"), class: "btn btn-primary" %>
     &nbsp;&nbsp;
-    <%= link_to "参加完了イベント", myevents_user_path(event_type: "past_attended_events"), class: "btn btn-primary" %>
+    <%= link_to "参加完了イベント", myevent_event_path(event_type: "past_attended_events"), class: "btn btn-primary" %>
   </div>
 
     <% @myevents.each do |event| %>
@@ -20,4 +17,5 @@
         </div>
       </div>
     <% end %>
- 
+
+    </div>

@@ -48,6 +48,20 @@ class EventsController < ApplicationController
     @attendee = Attendee.find_by(user_id: current_user.id, event_id: @event.id)
   end
   
+  def myevent
+    @events = Event.all
+    
+    if params[:event_type] == "created_events"
+      @myevents = @events.where(creator_id: current_user.id)
+    elsif params[:event_type] == "attended_events"
+      @myevents = Event.joins(:attendees).where(attendees: { user_id: current_user.id }).where.not(creator_id: current_user.id).page(params[:page]).per(8)
+    elsif params[:event_type] == "past_attended_events"
+      @myevents = Event.joins(:attendees).where(attendees: { user_id: current_user.id }).where("date < ?", Time.now).where.not(creator_id: current_user.id).page(params[:page]).per(8)
+    else
+      @myevents = Event.joins(:attendees).where(attendees: { user_id: current_user.id }).page(params[:page]).per(8)
+    end
+  end
+  
   
   private
   
