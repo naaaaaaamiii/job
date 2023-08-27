@@ -24,14 +24,14 @@
                         <% end %>
                       </li>
                    <% else %>
-                      <li class="nav-item mr-3">
-                        <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn btn-block mb-3", method: :post %>
+                      <li class="nav-item mr-1">
+                        <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn", method: :post %>
                       </li>
-                      <li class="nav-item mr-3">
-                        <%= link_to "新規登録", new_user_registration_path %>
+                      <li class="nav-item mr-1">
+                        <%= link_to "新規登録", new_user_registration_path, class:"btn" %>
                       </li>
-                       <li class="nav-item mr-3">
-                         <%= link_to posts_path do %>
+                       <li class="nav-item mr-1">
+                         <%= link_to posts_path, class:"btn" do %>
                         <i class="fa-solid fa-magnifying-glass"></i><!--検索-->
                         <% end %>
                       </li>

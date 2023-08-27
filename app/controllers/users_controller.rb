@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
  before_action :ensure_guest_user, only: [:edit]
+ before_action :is_matching_login_user, only: [:edit, :update]
 
   def index
    @user = current_user
@@ -46,30 +47,23 @@ class UsersController < ApplicationController
     @posts = current_user.posts.draft.page(params[:page]).reverse_order
   end
 
-  def myevent
-    if params[:event_type] == "created_events"
-      @myevents = current_user.events.where(events: {creator_id: current_user.id})
-    elsif params[:event_type] == "attended_events"
-      @myevents = Event.joins(:attendees).where(attendees: { user_id: current_user.id }).where.not(creator_id: current_user.id).page(params[:page]).per(8)
-    elsif params[:event_type] == "past_attended_events"
-      @myevents = Event.joins(:attendees).where(attendees: { user_id: current_user.id }).where("date < ?", Time.now).where.not(creator_id: current_user.id).page(params[:page]).per(8)
-    elsif
-      @myevents = current_user.events.where(creator_id: current_user.id)
-    end
-  end
-
   private
-
-   def user_params
-    params.require(:user).permit(:name, :introduction, :image, :post_status)
-   end
-
-    def ensure_guest_user #ゲストユーザーログイン
-       @user = User.find(params[:id])
-        if @user.guest_user?
-          redirect_to user_path(current_user) , notice: "ゲストユーザーはプロフィール編集画面へ遷移できません。"
+    
+       def user_params
+        params.require(:user).permit(:name, :introduction, :image, :post_status)
+       end
+    
+       def ensure_guest_user #ゲストユーザーログイン
+          @user = User.find(params[:id])
+            if @user.guest_user?
+              redirect_to user_path(current_user) , notice: "ゲストユーザーはプロフィール編集画面へ遷移できません。"
+            end
+       end
+       
+       def is_matching_login_user
+         user = User.find(params[:id])
+            unless user.id == current_user.id
+              redirect_to root_path
+            end
         end
-    end
-
-
-end
+   end
