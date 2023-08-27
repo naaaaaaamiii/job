@@ -45,7 +45,9 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @user = @event.creator
-    @attendee = Attendee.find_by(user_id: current_user.id, event_id: @event.id)
+    if user_signed_in?
+      @attendee = Attendee.find_by(user_id: current_user.id, event_id: @event.id)
+    end
   end
   
   def myevent

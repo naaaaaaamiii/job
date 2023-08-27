@@ -41,47 +41,49 @@
        </tbody>
      </table>
   </div>
-  <div class="row">
-       <!--イベントの編集　イベント作成者の場合-->
-       <% if current_user == @event.creator %>
-          <%= link_to edit_event_path(@event), class:"btn btn-success" do %>
-               編集
-          <% end %>
-          <%= link_to event_path(@event), class:"btn btn-danger", method: :delete, data: {confirm: "<確認>削除しますか？"} do %>
-               削除
-          <% end %>
-        <% end %>
-
-       <!--イベント参加の有無　イベント作成者ではないひとがログインしている場合-->
-       <% if user_signed_in? %>
-            <% if @event.creator.id != current_user.id %>
-                <% if @attendee %>
-                    <%= button_to '参加済み', event_attendees_path(@event, @attendee), disabled: true, class: 'btn btn-secondary mr-3' %>
-                    <%= link_to "参加取り消し", event_attendees_path(@event, @attendee), class:'btn btn-sm btn-danger', method: :delete, data: { confirm: '本当に変更しますか？' } %>
-                 <% else %>
-                     <%= button_to '参加する', event_attendees_path(@event), class: 'btn btn-primary mr-3' %>
+          <div class="row">
+               <!--イベントの編集　イベント作成者の場合-->
+              <% if user_signed_in? %>
+               <% if current_user == @event.creator %>
+                  <%= link_to edit_event_path(@event), class:"btn btn-success" do %>
+                       編集
                   <% end %>
-             <% end %>
-      <% else %>
-             <%= link_to '会員登録して参加する', new_user_session_path, class: 'btn btn-primary mr-3' %>
-      <% end %>
-  </div>
-  <div class="row">
-    <!--参加者-->
-    <% if current_user == @event.creator %>
-        <% @event.users.each do |user| %>
-           <table class="table">
-               <thead>
-                   <th>Member list</th>
-               </thead>
-               <tbody>
-                   <tr>
-                     <td><%= user.name %></td>
-                     <td><%= user.email %></td>
-                   </tr>
-               </tbody>
-           </table>
-        <% end %>
-    <% end %>
-  </div>
+                  <%= link_to event_path(@event), class:"btn btn-danger", method: :delete, data: {confirm: "<確認>削除しますか？"} do %>
+                       削除
+                  <% end %>
+                <% end %>
+              <% end %>
+
+               <!--イベント参加の有無　イベント作成者ではないひとがログインしている場合-->
+               <% if user_signed_in? %>
+                    <% if @event.creator.id != current_user.id %>
+                        <% if @attendee %>
+                            <%= button_to '参加済み', event_attendees_path(@event, @attendee), disabled: true, class: 'btn btn-secondary mr-3' %>
+                            <%= link_to "参加取り消し", event_attendees_path(@event, @attendee), class:'btn btn-sm btn-danger', method: :delete, data: { confirm: '本当に変更しますか？' } %>
+                         <% else %>
+                             <%= button_to '参加する', event_attendees_path(@event), class: 'btn btn-primary mr-3' %>
+                          <% end %>
+                     <% end %>
+              <% else %>
+                     <%= link_to '会員登録して参加する', new_user_registration_path, class: 'btn btn-primary mr-3' %>
+              <% end %>
+          </div>
+          <div class="row">
+            <!--参加者-->
+            <% if current_user == @event.creator %>
+                <% @event.users.each do |user| %>
+                   <table class="table">
+                       <thead>
+                           <th>Member list</th>
+                       </thead>
+                       <tbody>
+                           <tr>
+                             <td><%= user.name %></td>
+                             <td><%= user.email %></td>
+                           </tr>
+                       </tbody>
+                   </table>
+                <% end %>
+            <% end %>
+          </div>
 </div>

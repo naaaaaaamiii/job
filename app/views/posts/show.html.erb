@@ -1,15 +1,17 @@
 <div class="container">
   <div class="row">
       <div class="col">
-        <!--My pageに戻るボタン-->
-        <%= link_to user_path(current_user),class:"btn btn-outline-secondary rounded-circle my-4" do %>
-         <i class="fa-solid fa-angles-left"></i>
-        <% end %><br>
-        <!--非同期化-->
-        <div id="favorite_buttons_<%= @post.id %>">
-          <!--お気に入りボタン-->
-          <%= render'favorites/favorite-btn', post: @post %>
-        </div>
+        <% if user_signed_in? %>
+            <!--My pageに戻るボタン-->
+            <%= link_to user_path(current_user),class:"btn btn-outline-secondary rounded-circle my-4" do %>
+             <i class="fa-solid fa-angles-left"></i>
+            <% end %><br>
+            <!--非同期化-->
+            <div id="favorite_buttons_<%= @post.id %>">
+              <!--お気に入りボタン-->
+              <%= render'favorites/favorite-btn', post: @post %>
+            </div>
+        <% end %>
       </div>
       <!--記事の詳細-->
       <div class="col-8">
@@ -42,9 +44,11 @@
           <div class="row m-3">
           <!--この記事を書いたUserプロフィール-->
           <%= render 'users/index', user: @user %>
-          <div id="follow_<%= @user.id %>">
-             <%= render 'relationships/follow_btn', user: @user %><!--フォローボタン-->
-          </div>
+          <% if user_signed_in? %>
+            <div id="follow_<%= @user.id %>">
+               <%= render 'relationships/follow_btn', user: @user %><!--フォローボタン-->
+            </div>
+          <% end %>
           </div>
        </div>
     </div>
@@ -54,9 +58,11 @@
           <div id="post_comments">
               <%= render 'post_comments/index', post: @post, post_comments: @post_comments %><!--コメント一覧-->
           </div>
-          <div id="comment_form">
-              <%= render 'post_comments/form', post: @post, post_comment: @post_comment %><!--コメント入力フォーム-->
-          </div>
+          <% if user_signed_in? %>
+            <div id="comment_form">
+                <%= render 'post_comments/form', post: @post, post_comment: @post_comment %><!--コメント入力フォーム-->
+            </div>
+          <% end %>
         </div>
        </div>
   </div>
