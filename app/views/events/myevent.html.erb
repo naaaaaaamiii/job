@@ -7,15 +7,19 @@
     &nbsp;&nbsp;
     <%= link_to "参加完了イベント", myevent_event_path(event_type: "past_attended_events"), class: "btn btn-primary" %>
   </div>
-
-    <% @myevents.each do |event| %>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title"><%= link_to event.event_name, event_path(event) %></h5>
-          <p class="card-text"><strong>開催日：</strong><%= event.date %></p>
-          <p class="card-text"><strong>参加URL : </strong><%= link_to  event.url %></p>
-        </div>
+   <div class="row m-5">
+   <% @myevents.each do |event| %>
+      <div class="col.justify-content-around m-3">
+          <div class="card" style="width: 18rem;">
+            <a href="/events/<%= event.id %>" class="card text-dark">
+                更新日<%= event.created_at.strftime('%Y/%m/%d') %>
+                <%= image_tag event.get_event_image(400,400) %>
+                <h4 class="card-title"><%= event.event_name %></h4>
+                <p class="card-text"><%= event.event_introduction %></p>
+            </a>
+          </div>
       </div>
     <% end %>
+ </div>
 
     </div>
