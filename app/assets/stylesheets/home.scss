@@ -11,11 +11,6 @@
 
 .main-visual{
   text-align: center;
-  size: 15px;
-}
-
-p{
-  // text-align: center;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:900');
@@ -166,14 +161,9 @@ a.btn-flat
   );
 }
 
-.swiper {
-  width: 400px;
-  height: 300px;
+.about-title{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60px;
+  color: #00008b;
 }
-
-:root {
-  --swiper-navigation-color: #ffffff;
-  --swiper-pagination-color: #ffffff;
-}
-
 
