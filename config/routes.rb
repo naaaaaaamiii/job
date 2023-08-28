@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  # 管理者
-  devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
-  sessions: "admin/sessions"
-}
-
   # ゲストログイン
   devise_scope :user do
     post "users/guest_sign_in", to: "users/sessions#guest_sign_in"
@@ -15,6 +10,7 @@ Rails.application.routes.draw do
 
   get "search" => "searches#search" # 検索機能
   get "about"  => "homes#about"
+  
   resources :posts, only: [:index, :show, :edit, :create, :update, :destroy, :new] do
     resources :post_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
