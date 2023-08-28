@@ -4,10 +4,10 @@
   <i></i>
 </span>
 
-<nav class="nav m-5">
+<nav class="nav">
   <ul class="nav_menu_ul">
      <% if user_signed_in? %>
-          <li class="nav_menu_li"><i class="fa-solid fa-user"></i><%= link_to "Mypage", user_path(current_user) %></li>
+          <li class="nav_menu_li m-4"><i class="fa-solid fa-user"></i><%= link_to "Mypage", user_path(current_user) %></li>
           <li class="nav_menu_li"> <i class="fa-solid fa-heart"></i><%= link_to "いいね一覧", favorites_user_path(current_user) %></li>
           <li class="nav_menu_li"><i class="fa-solid fa-feather"></i><%= link_to "Post Detail",users_path %></li>
       <% else %>
