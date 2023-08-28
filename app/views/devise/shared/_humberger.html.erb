@@ -7,11 +7,16 @@
 <nav class="nav">
   <ul class="nav_menu_ul">
      <% if user_signed_in? %>
-          <li class="nav_menu_li m-4"><i class="fa-solid fa-user"></i><%= link_to "Mypage", user_path(current_user) %></li>
-          <li class="nav_menu_li"> <i class="fa-solid fa-heart"></i><%= link_to "いいね一覧", favorites_user_path(current_user) %></li>
-          <li class="nav_menu_li"><i class="fa-solid fa-feather"></i><%= link_to "Post Detail",users_path %></li>
+          <li class="nav_menu_li mt-5"><%= link_to user_path(current_user) do %><i class="fa-solid fa-user"> My page</i><% end %></li>
+          <li class="nav_menu_li"><%= link_to myevent_event_path(current_user) do %><i class="fa-solid fa-door-open"> My Events</i><% end %></li>
+          <li class="nav_menu_li"><%= link_to favorites_user_path(current_user) do %><i class="fa-solid fa-heart"> Fovorites</i><% end %></li>
+          <li class="nav_menu_li"><%= link_to users_path do %><i class="fa-solid fa-feather"> Post Detail</i><% end %></li>
+          <li class="nav_menu_li"><%= link_to new_post_path do %><i class="fa-solid fa-plus"> Create Post</i><% end %></li>
+          <li class="nav_menu_li"><%= link_to  new_event_path do %><i class="fa-solid fa-plus"> Create Event</i><% end %></li>
+          <li class="nav_menu_li"><%= link_to events_path do %><i class="fa-regular fa-calendar-check"> Events</i><% end %></li>
       <% else %>
-          <li class="nav_menu_li"><i class="fa-solid fa-right-from-bracket"></i><%= link_to "ログイン", new_user_session_path %></li>
+          <li class="nav_menu_li m-4"><%= link_to new_user_session_path do %><i class="fa-solid fa-right-from-bracket"> Log in</i><% end %></li>
+          <li class="nav_menu_li"><%= link_to events_path do %><i class="fa-regular fa-calendar-check"> Events</i><% end %></li>
       <% end %>
   </ul>
 </nav>
