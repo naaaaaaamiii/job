@@ -63,7 +63,7 @@ gem "enum_help"
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 
-# テストデプロイ
+# デプロイ
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
