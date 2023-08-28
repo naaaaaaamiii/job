@@ -15,7 +15,7 @@
             <h3 class><i class="fa-regular fa-circle-play", style="color:#0000ff;"></i>注目されている経験</h3>
           </div>
           <div class="row top-row flex-nowrap ml-4">
-              <% @impressions.each do |post| %>
+              <% @impression.each do |post| %>
                 <div class="col top-col justify-content-around">
                     <div class="card" style="width: 20rem;">
                       <a href="/posts/<%= post.id %>" class="text-dark">
