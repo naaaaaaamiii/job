@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
 
   scope :latest, -> {order(created_at: :desc)} #postを新着順に表示できるようにする
-  scope :impressions_count, -> {order(impressions: :desc)} #postをpvの多い順に表示できるようにする
+  scope :impressions_count, -> {order(impressions_count: :desc)} #postをpvの多い順に表示できるようにする
 
   enum post_status: { draft: 0, published: 1 } #下書き,投稿のenumステータス
 
