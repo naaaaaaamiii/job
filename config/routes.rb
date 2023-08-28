@@ -14,10 +14,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show, :edit, :create, :update, :destroy, :new] do
     resources :post_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
-      collection do
-        get :confirm
-      end
-    end
+  end
 
   resources :users, only: [:index, :show, :edit, :update] do
       member do
