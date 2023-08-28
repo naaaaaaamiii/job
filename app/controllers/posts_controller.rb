@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.published.page(params[:page]).reverse_order #公開記事のみ表示
-    @rank_posts = Post.order(impressions_count: 'DESC') #pv数の多い順に並び変える
+   # @rank_posts = Post.order(impressions_count: 'DESC') #pv数の多い順に並び変える
   end
 
    impressionist :actions=> [:show] #showページを開いたらPV数を計測
