@@ -250,6 +250,31 @@ a.btn-flat
   }
 }
 
+// じわっと出てくる
+.blur{
+  animation-name:blurAnime;
+  animation-duration: 4s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes blurAnime{
+  from {
+  filter: blur(10px);
+  transform: scale(1.02);
+  opacity: 0;
+  }
+
+  to {
+  filter: blur(0);
+  transform: scale(1);
+  opacity: 1;
+  }
+}
+ 
+.blurTrigger{
+    opacity: 0;
+}
+
 // bottom-text
 
  .join-title{
