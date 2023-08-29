@@ -162,12 +162,35 @@ a.btn-flat
 }
 
 .about-title{
-  font-family: 'Montserrat', sans-serif;
   font-size: 60px;
-  color: #00008b;
+  color: #4b0082;
   font-weight: bold;
   overflow: hidden;
 }
+
+.about-title2{
+  writing-mode: vertical-rl;
+  font-size: 60px;
+  color: #800080;
+  font-weight: bold;
+  overflow: hidden;
+  padding-left: 100px;
+}
+
+.about-title3{
+  font-size: 60px;
+  color: #1e90ff;
+  font-weight: bold;
+  overflow: hidden;
+  padding-left: 200px;
+}
+
+ .about-body{
+   letter-spacing: 5px;
+   line-height: 30px;
+   font-size: 20px;
+   font-weight: 600;
+ }
 
 /*========= 流れるテキスト ===============*/
 
@@ -228,12 +251,6 @@ a.btn-flat
 }
 
 // bottom-text
- .about-body{
-   letter-spacing: 5px;
-   line-height: 30px;
-   font-size: 20px;
-   font-weight: 600;
- }
 
  .join-title{
    font-size: 30px;
