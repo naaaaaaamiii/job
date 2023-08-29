@@ -209,7 +209,7 @@ a.btn-flat
 
 .slideAnimeRightLeft {
   animation-name:slideTextX-100;
-  animation-duration:0.8s;
+  animation-duration: 2s;
   animation-fill-mode:forwards;
     opacity: 0;
 }
@@ -217,7 +217,7 @@ a.btn-flat
 
 @keyframes slideTextX-100 {
   from {
-  transform: translateX(100%);/*要素を右の枠外に移動*/
+  transform: translateX(0%);/*要素を右の枠外に移動*/
     opacity: 0;
   }
 
