@@ -44,6 +44,9 @@ $('.nav_toggle').on('click', function () {
     slideAnime();/* アニメーション用の関数を呼ぶ*/
   });
   
+  // 上から下へ
+  
+  
   // じわっとでてくる
   function BlurTextAnimeControl() {
   $('.blurTrigger').each(function(){ 
