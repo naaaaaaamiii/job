@@ -1,7 +1,7 @@
  <div class="row m-5">
    <% events.each do |event| %>
       <div class="col.justify-content-around m-3">
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 19rem;">
             <a href="/events/<%= event.id %>" class="card text-dark">
                 更新日<%= event.created_at.strftime('%Y/%m/%d') %>
                 <%= image_tag event.get_event_image(400,400) %>
