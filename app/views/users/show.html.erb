@@ -46,11 +46,11 @@
  
    <div class="row">
     <% @posts.each do |post| %>
-      <div class="col justify-content-around m-3">
+      <div class="col.justify-content-around m-3">
          <!--投稿一覧-->
              <div class="card shadow" style="width: 20rem;">
                <a href="/posts/<%= post.id %>" class="text-dark">
-                 <%= image_tag post.get_post_image(320,400) %>
+                 <%= image_tag post.get_post_image(320,400), class:"card-img-top"  %>
                    <h5 class="card-title"><strong><%= post.title %></strong></h5>
                    <h6 class="card-text2"><%= post.body %></h6>
                    <i class="fa-regular fa-heart"> <%= post.favorites.count %></i>

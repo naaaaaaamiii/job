@@ -37,7 +37,7 @@
             </div>
               <div class="row top-row flex-nowrap ml-4">
                   <% @posts.each do |post| %>
-                    <div class="col top-col justify-content-around ">
+                    <div class="col top-col.justify-content-around ">
                         <div class="card" style="width: 20rem;">
                           <a href="/posts/<%= post.id %>" class="text-dark">
                             <div class="card-hedder m-1">
@@ -58,7 +58,7 @@
             </div>
                <div class="row top-row flex-nowrap m-4">
                   <% @favorites.each do |post| %>
-                    <div class="col top-col justify-content-around ">
+                    <div class="col top-col.justify-content-around ">
                         <div class="card" style="width: 20rem;">
                           <a href="/posts/<%= post.id %>" class="text-dark">
                             <div class="card-hedder m-1">
@@ -86,10 +86,10 @@
             </div>
               <div class="row top-row flex-nowrap m-4">
                   <% @events.each do |event| %>
-                    <div class="col top-col justify-content-around ">
+                    <div class="col top-col.justify-content-around ">
                       <div class="card" style="width: 20rem;">
                         <a href="/events/<%= event.id %>" class="text-dark">
-                          <%= image_tag event.get_event_image(320,400) %>
+                          <%= image_tag event.get_event_image(320,320),class:"card-img-top" %>
                             <h5 class="card-title"><strong><%= event.event_name %></strong></h5>
                             <h6 class="card-text2"><%= event.event_introduction %></h6>
                          </a>
