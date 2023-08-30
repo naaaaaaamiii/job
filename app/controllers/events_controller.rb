@@ -39,7 +39,7 @@ class EventsController < ApplicationController
   end
   
   def index
-    @events = Event.all
+    @events = Event.latest
   end
   
   def show

@@ -3,7 +3,8 @@ class Event < ApplicationRecord
   belongs_to :creator, class_name: "User"
   has_many :users, through: :attendees
 
-
+  scope :latest, -> {order(created_at: :desc)} #新しい順に並べる
+  
   enum event_status: { offline: 0, online: 1 } #イベント開催オフラインかオンラインか
   
   
