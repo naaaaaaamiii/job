@@ -149,8 +149,11 @@ a.btn-flat
   -webkit-line-clamp: 7; /* 任意の行数を指定 */
 }
 
-.card-introduction{
-  -webkit-line-clamp: 2;
+.card-text2{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .join-top{
