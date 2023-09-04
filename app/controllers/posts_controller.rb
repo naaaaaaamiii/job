@@ -15,7 +15,7 @@ class PostsController < ApplicationController
         redirect_to users_path
     else
       　flash.now[:alert] = "Error🫠"
-        render :new  #保存に失敗したら元のページに戻る
+        render :new  #保存に失敗したらnewページに戻る
     end
   end
 
