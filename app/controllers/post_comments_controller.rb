@@ -1,5 +1,4 @@
 class PostCommentsController < ApplicationController
- before_action :authenticate_user!, only: [:create] 
 
   def create
    @post = Post.find(params[:post_id])
@@ -9,7 +8,7 @@ class PostCommentsController < ApplicationController
    comment.save!
   # redirect_to request.referer #非同期のためコメントアウト
    @post_comment = PostComment.new(post_comment_params)
-
+   
   end
 
   def destroy
