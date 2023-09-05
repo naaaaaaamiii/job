@@ -41,9 +41,9 @@
 
 ## 設計書
 
-[WBS](https://docs.google.com/spreadsheets/d/15nzRLmWkG8VysANdfVraQMTsd6kw24l8QAUAK3GIVeE/edit#gid=1773513600)
-[テーブル定義書](https://docs.google.com/spreadsheets/d/1fEh5slakMX4_a1kjM6ls0fJjrgfxMm_NRBxqCAfN95Q/edit#gid=1373217982)
-[実装機能リスト](https://docs.google.com/spreadsheets/d/15-oqb_wyngIrPEEWMA8PZq52eEyTNW3cr9WTTgGuELo/edit#gid=375590402)
+* [WBS](https://docs.google.com/spreadsheets/d/15nzRLmWkG8VysANdfVraQMTsd6kw24l8QAUAK3GIVeE/edit#gid=1773513600)
+* [テーブル定義書](https://docs.google.com/spreadsheets/d/1fEh5slakMX4_a1kjM6ls0fJjrgfxMm_NRBxqCAfN95Q/edit#gid=1373217982)
+* [実装機能リスト](https://docs.google.com/spreadsheets/d/15-oqb_wyngIrPEEWMA8PZq52eEyTNW3cr9WTTgGuELo/edit#gid=375590402)
 
 
 ## 開発環境
