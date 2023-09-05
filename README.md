@@ -40,7 +40,7 @@
 * コミュニティの参加
 
 ## 設計書
-
+[WBS]
 https://docs.google.com/spreadsheets/d/15nzRLmWkG8VysANdfVraQMTsd6kw24l8QAUAK3GIVeE/edit#gid=1773513600
 ​
 ## 開発環境
