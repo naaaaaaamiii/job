@@ -17,7 +17,7 @@
     - 金
     - 土
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -43,7 +43,7 @@
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -196,3 +196,14 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M"
       short: "%m/%d"
+
+# カラム名日本語化
+
+ja:
+  activerecord:
+    models:
+      post:
+    attributes:
+      post:
+       title: タイトル
+       body: 本文
