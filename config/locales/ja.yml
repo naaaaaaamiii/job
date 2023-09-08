@@ -181,6 +181,21 @@
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+    
+  activerecord:
+   models:
+     posts: 記事
+     event: イベント
+   attributes:
+     post:
+       title: タイトル
+       body: 本文
+     event:
+       event-title: イベント
+     shipping_address:
+       postal_code: 郵便番号
+       address: 住所
+       name: 宛名
 
 #ページネーションの日本語化
 ja:
@@ -196,14 +211,3 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M"
       short: "%m/%d"
-
-# カラム名日本語化
-
-ja:
-  activerecord:
-    models:
-      post:
-    attributes:
-      post:
-       title: タイトル
-       body: 本文
