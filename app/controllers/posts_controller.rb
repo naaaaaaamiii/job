@@ -14,7 +14,7 @@ class PostsController < ApplicationController
         flash[:notice] = "Success🎉"
         redirect_to users_path
     else
-      　flash.now[:alert] = "Error🫠"
+        flash.now[:alert] = "Error🫠"
         render :new  #保存に失敗したらnewページに戻る
     end
   end
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
        redirect_to post_path(@post)
      else
        flash.now[:alert] = "Error🫠"
-      　render :edit
+       render :edit
      end
   end
 
