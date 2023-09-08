@@ -6,7 +6,7 @@ class PostCommentsController < ApplicationController
    comment = PostComment.new(post_comment_params)
    comment.user_id = current_user.id
    comment.post_id = @post.id
-   if comment.save
+   comment.save
   # redirect_to request.referer #非同期のためコメントアウト
     @post_comment = PostComment.new(post_comment_params)
   end
