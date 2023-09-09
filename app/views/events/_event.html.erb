@@ -3,7 +3,7 @@
       <div class="col.justify-content-around m-3">
           <div class="card event-card" style="width: 18rem;">
             <a href="/events/<%= event.id %>" class="card text-dark">
-                更新日<%= event.created_at.strftime('%Y/%m/%d') %>
+                開催日<%= event.date.strftime('%Y/%m/%d') %>
                 <%= image_tag event.get_event_image(400,400),class:"card-img-top" %>
                 <h4 class="card-title"><%= event.event_name %></h4>
             </a>
