@@ -31,6 +31,9 @@
             <tr>
               <td><%= @post.body %></td>
             </tr>
+            <tr>
+              <td>投稿日<%= @post.created_at.strftime('%Y/%m/%d') %></td>
+            </tr>
           </tbody>
         </table>
        </div>
