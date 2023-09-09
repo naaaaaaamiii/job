@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :ensure_correct_user, only: [:edit, :update]
   
   def new
     @event = Event.new
@@ -17,6 +18,7 @@ class EventsController < ApplicationController
   end
   
   def edit
+    @event.creator = ensure_correct_user
     @event = Event.find(params[:id])
   end
   
@@ -70,5 +72,12 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:event_image, :event_name, :event_introduction, :date, :url, :postal_code, :adress)
   end
+  
+   def ensure_correct_user
+    @event = Event.find(params[:id])
+    unless @event.creator == current_user
+      redirect_to root_path
+    end
+   end
   
 end
