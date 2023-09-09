@@ -191,11 +191,11 @@
        title: タイトル
        body: 本文
      event:
-       event-title: イベント
-     shipping_address:
-       postal_code: 郵便番号
-       address: 住所
-       name: 宛名
+       event_name: イベントタイトル
+       event_introduction: イベント詳細
+       date: 日付
+       
+       
 
 #ページネーションの日本語化
 ja:
