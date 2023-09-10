@@ -15,6 +15,10 @@ class Event < ApplicationRecord
   def includesUSesr?(user) #ユーザーがイベントの参加者かどうか
     attendees.exists?(attendee_id: user_id)
   end
+  
+  def self.search_content(content)#検索
+      all
+  end
 
 
   validate :date

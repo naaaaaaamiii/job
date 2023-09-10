@@ -1,9 +1,15 @@
 class SearchesController < ApplicationController
   def search
-    @range = params[:range]
-    @word = params[:word]
-    @model = Post
-    @posts = Post.published.where("category LIKE?","%#{@word}%")
-    @posts = Post.published.looks(params[:search], params[:word])
+
+    @content = params[:content]
+    @model = params[:model] || "nil"
+
+    # 検索ワードが空の場合は何もしない
+    return if @content.blank?
+
+    # Array
+    @results = Search.search_all_models(@content, @model)
+
+    render "searches/search"
   end
 end

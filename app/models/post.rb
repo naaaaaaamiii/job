@@ -16,9 +16,8 @@ class Post < ApplicationRecord
   # バリデーション
   validates :title, :body, :post_status, presence: true
 
-
-  def self.looks(search, word) #検索方法
-      @post = Post.where("title LIKE?","%#{word}%")
+  def self.search_content(content)#検索
+      all
   end
 
   def save_post_tags(tags) #タグ追加する
