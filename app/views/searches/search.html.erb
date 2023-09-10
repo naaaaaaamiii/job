@@ -4,15 +4,20 @@
       <h3 class>検索結果</h3>
       <table class="table">
          <tbody>
-            <% @posts.each do |post| %>
-               <tr>
-                <td><%= image_tag post.get_post_image(50,50), class:'rounded-circle' %></td>
-                <th><%= link_to post.title,post_path(post) %></th>
-                <td><i class="fa-regular fa-face-kiss-wink-heart"></i><%= post.favorites.count %></td>
-                <td><i class="fa-regular fa-comment"></i><%= post.post_comments.count %></td>
-                <td><i class="fa-regular fa-eye"></i><%= post.impressions_count  %></td>
-               </tr>
-            <% end %>
+           <% if @model == 'post' %>
+            <h4>Posts search for "<%= @content %>"</h4>
+                <% @results.each do |post| %>
+                   <tr>
+                    <td><%= image_tag post.get_post_image(50,50), class:'rounded-circle' %></td>
+                    <th><%= link_to post.title,post_path(post) %></th>
+                    <td><i class="fa-regular fa-face-kiss-wink-heart"></i><%= post.favorites.count %></td>
+                    <td><i class="fa-regular fa-comment"></i><%= post.post_comments.count %></td>
+                    <td><i class="fa-regular fa-eye"></i><%= post.impressions_count  %></td>
+                   </tr>
+                <% end %>
+           <% else %>
+              <p>検索結果がありません</p>
+           <% end %>
           </tbody>
       </table>
     </div>

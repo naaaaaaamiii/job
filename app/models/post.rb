@@ -16,8 +16,14 @@ class Post < ApplicationRecord
   # バリデーション
   validates :title, :body, :post_status, presence: true
 
-  def self.search_content(content)#検索
+  def self.search_content(content, method)
+    if method == "perfect"
+      where(title: content)
+    elsif method == "partial"
+      where("title LIKE ?", "%#{content}%")
+    else
       all
+    end
   end
 
   def save_post_tags(tags) #タグ追加する
