@@ -16,10 +16,6 @@ class Event < ApplicationRecord
     attendees.exists?(attendee_id: user_id)
   end
   
-  def self.search_content(content)#検索
-      all
-  end
-
 
   validate :date
    def date_check #dateが今日より前の日付は設定できないようにする。
