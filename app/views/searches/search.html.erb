@@ -22,7 +22,10 @@
                   <% end %>
             <% else @model == 'nil' %>
                 <h4>Search for "<%= @content %>"</h4>
-                   <% if @results.present? %>
+                  <% if @results.present? %>
+                      <% @results.each do |post| %>
+                        
+                      <% end %>
                    <% else %>
                       <p>検索結果がありません</p>
                    <% end %>
