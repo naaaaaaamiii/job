@@ -9,7 +9,7 @@ class Search < ApplicationRecord
     else
       results = []
       results << Post.search_content(content, method)
-      results << Posttag.search_content(content, method)
+      results << PostTag.search_content(content, method)
       results.flatten
     end
    end

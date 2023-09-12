@@ -1,15 +1,13 @@
 class SearchesController < ApplicationController
   def search
-
     @content = params[:content]
     @model = params[:model] || "nil"
-
-    # 検索ワードが空の場合は何もしない
+    @method = params[:method]
+    
     return if @content.blank?
-
-    # Array
-    @results = Search.search_all_models(@content, @model)
-
+    
+    @results = Search.search_all_models(@content, @model, @method)
+    
     render "searches/search"
   end
 end
