@@ -11,7 +11,7 @@ class SearchesController < ApplicationController
     end
     
     @results = Search.search_all_models(@content, @model, @method)
-    
+    @posts = Post.published.page(params[:page]).reverse_order
     render "searches/search"
   end
 end
