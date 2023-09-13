@@ -10,7 +10,7 @@
            <tbody>
             <% @posts.each do |post| %>
                <tr>
-                <td><%= image_tag post.get_post_image(50,50), class:'rounded-circle' %></td>
+                <td><%= image_tag post.get_post_image(50,50)%></td>
                 <th><%= link_to post.title,post_path(post) %></th>
                 <td><i class="fa-regular fa-face-kiss-wink-heart"></i><%= post.favorites.count %></td>
                 <td><i class="fa-regular fa-comment"></i><%= post.post_comments.count %></td>

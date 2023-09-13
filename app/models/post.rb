@@ -15,7 +15,8 @@ class Post < ApplicationRecord
 
   # バリデーション
   validates :title, :body, :post_status, presence: true
-
+ 
+ #検索
   def self.search_content(content, method)
     if method == "perfect"
       where(title: content)

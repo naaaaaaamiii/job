@@ -10,7 +10,7 @@
                   <% if @results.present? %>
                         <% @results.each do |post| %>
                            <tr>
-                            <td><%= image_tag post.get_post_image(50,50), class:'rounded-circle' %></td>
+                            <td><%= image_tag post.get_post_image(50,50) %></td>
                             <th><%= link_to post.title,post_path(post) %></th>
                             <td><i class="fa-regular fa-face-kiss-wink-heart"></i><%= post.favorites.count %></td>
                             <td><i class="fa-regular fa-comment"></i><%= post.post_comments.count %></td>
@@ -20,11 +20,32 @@
                   <% else %>
                         <p>検索結果がありませんk</p>
                   <% end %>
-            <% else @model == 'nil' %>
+           <% elsif @model == 'posttag' %>
+                <h4>Posts search for "<%= @content %>"</h4>
+                  <% if @results.present? %>
+                        <% @results.each do |post| %>
+                           <tr>
+                            <td><%= image_tag post.get_post_image(50,50) %></td>
+                            <th><%= link_to post.title,post_path(post) %></th>
+                            <td><i class="fa-regular fa-face-kiss-wink-heart"></i><%= post.favorites.count %></td>
+                            <td><i class="fa-regular fa-comment"></i><%= post.post_comments.count %></td>
+                            <td><i class="fa-regular fa-eye"></i><%= post.impressions_count  %></td>
+                           </tr>
+                        <% end %>
+                  <% else %>
+                        <p>検索結果がありませんk</p>
+                  <% end %>
+           <% elsif @model == 'nil' %>
                 <h4>Search for "<%= @content %>"</h4>
                   <% if @results.present? %>
                       <% @results.each do |post| %>
-                        
+                         <tr>
+                            <td><%= image_tag post.get_post_image(50,50) %></td>
+                            <th><%= link_to post.title,post_path(post) %></th>
+                            <td><i class="fa-regular fa-face-kiss-wink-heart"></i><%= post.favorites.count %></td>
+                            <td><i class="fa-regular fa-comment"></i><%= post.post_comments.count %></td>
+                            <td><i class="fa-regular fa-eye"></i><%= post.impressions_count  %></td>
+                           </tr>
                       <% end %>
                    <% else %>
                       <p>検索結果がありません</p>
