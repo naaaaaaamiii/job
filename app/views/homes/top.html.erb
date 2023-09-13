@@ -66,12 +66,13 @@
                             <div class="card-hedder m-1">
                               <%= image_tag post.user.get_image(40,40) %>
                               <%= post.user.name %>
-                              <%=  post.created_at.strftime('%Y/%m/%d') %>
+                              <%= post.created_at.strftime('%Y/%m/%d') %>
                             </div>
                             <div class="card-body">
                               <h5 class="card-title"><strong><%= post.title %></strong></h5>
                               <h6 class="card-text"><%= post.body %></h6>
                             </div>
+                            <i class="fa-solid fa-heart"style="color: red;"></i><%= post.favorites.count %>
                           </a>
                         </div>
                     </div>
