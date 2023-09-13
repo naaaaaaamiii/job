@@ -1,20 +1,38 @@
 <div class="container mt-5">
-  <div class="row my-5">
+  <div class="row">
     <div class="col">
       <h3>フォロー中 <%= @user.followers.count %></h3>
-      <% @users.each do |user| %>
-       <table class="table">
-         <tbody>
-           <tr>
-             <th><%= image_tag user.get_image(100,100) %></th>
-             <th><%= user.name %></th>
-          </tr>
-         </tbody>
-       </table>
+      <% if @users.exists? %>
+          <% @users.each do |user| %>
+           <table class="table">
+             <tbody>
+               <tr>
+                 <th><%= image_tag user.get_image(100,100) %></th>
+                 <th><%= user.name %></th>
+              </tr>
+             </tbody>
+           </table>
+          <% end %>
+      <% else %>
+       <p>フォロー中のユーザーはいません。</p>
       <% end %>
     </div>
     <div class="col">
       <h3>フォロワー <%= @user.followeds.count %></h3>
+        <% if @user.follower_users.exists? %>
+          <% @user.follower_users.each do |user| %>
+             <table class="table">
+               <tbody>
+                 <tr>
+                   <th><%= image_tag user.get_image(100,100) %></th>
+                   <th><%= user.name %></th>
+                </tr>
+               </tbody>
+             </table>
+          <% end %>
+        <% else %>
+          <p>フォロワーはいません。</p>
+        <% end %>
     </div>
   </div>
 </div>

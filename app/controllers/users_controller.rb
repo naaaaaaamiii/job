@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
   def followers #フォローされた一覧
     @user = User.find(params[:id])
-    @user = @user.follower_users
+    @users = @user.follower_users
   end
 
   def confirm #下書きした記事のみ表示
