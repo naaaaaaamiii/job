@@ -28,6 +28,9 @@
                             <h5 class="card-title"><strong><%= post.title %></strong></h5>
                             <h6 class="card-text"><%= post.body %></h6>
                           </div>
+                          <div class="card-bottom">
+                            <i class="fa-regular fa-eye"></i><%= post.impressions_count  %>
+                          </div>
                       </a>
                     </div>
                 </div>
@@ -72,7 +75,9 @@
                               <h5 class="card-title"><strong><%= post.title %></strong></h5>
                               <h6 class="card-text"><%= post.body %></h6>
                             </div>
-                            <i class="fa-solid fa-heart"style="color: red;"></i><%= post.favorites.count %>
+                            <div class="card-bottom">
+                              <i class="fa-solid fa-heart" style="color: red;"></i><%= post.favorites.count %>
+                            </div>
                           </a>
                         </div>
                     </div>

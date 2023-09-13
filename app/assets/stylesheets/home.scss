@@ -160,7 +160,12 @@ a.btn-flat
 		height: 200px;
 		width: 100%;
 		object-fit: cover;
-	}
+}
+	
+.card-bottom{
+  bottom: 5px;
+  position: absolute;
+}
 
 .join-top{
   border-radius: 10px;
